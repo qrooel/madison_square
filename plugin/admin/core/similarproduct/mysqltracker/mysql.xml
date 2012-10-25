@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>similarproduct</table>
+			<column type="int">productid</column>
+			<status>RELATED</status>
+			<controller>similarproduct</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>orderstatusgroups</table>
+			<column type="int">idorderstatusgroups</column>
+			<status>RELATED</status>
+			<controller>orderstatusgroups</controller>
+			<where>
+				<condition>
+					<column type="int">idorderstatusgroups</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderstatusorderstatusgroups</table>
+			<column type="int">orderstatusgroupsid</column>
+			<status>NOTICE</status>
+			<controller>orderstatusgroups</controller>
+			<where>
+				<condition>
+					<column type="int">orderstatusgroupsid</column>
+					<bind>orderstatusgroups</bind>
+					<value>idorderstatusgroups</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderstatusgroupstranslation</table>
+			<column type="int">idorderstatusgroupstranslation</column>
+			<status>NOTICE</status>
+			<controller>orderstatusgroups</controller>
+			<where>
+				<condition>
+					<column type="int">orderstatusgroupsid</column>
+					<bind>orderstatusgroups</bind>
+					<value>idorderstatusgroups</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

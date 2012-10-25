@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>productstatus</table>
+			<column type="int">idproductstatus</column>
+			<status>RELATED</status>
+			<controller>productstatus</controller>
+			<where>
+				<condition>
+					<column type="int">idproductstatus</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>product</table>
+			<column type="int">idproduct</column>
+			<status>ERROR</status>
+			<errormsg>ERR_BIND_STATUS_PRODUCT</errormsg>
+			<controller>productstatus</controller>
+			<where>
+				<condition>
+					<column type="int">status</column>
+					<bind>productstatus</bind>
+					<value>idproductstatus</value>
+				</condition>
+			</where>	
+		</query>
+	</queries>
+</mysql>

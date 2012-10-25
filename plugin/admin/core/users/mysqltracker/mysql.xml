@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>user</table>
+			<column type="int">iduser</column>
+			<status>RELATED</status>
+			<controller>user</controller>
+			<where>
+				<condition>
+					<column type="int">iduser</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>userdata</table>
+			<column type="int">userdataid</column>
+			<status>NOTICE</status>
+			<controller>user</controller>
+			<where>
+				<condition>
+					<column type="int">userid</column>
+					<bind>user</bind>
+					<value>iduser</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>usergroup</table>
+			<column type="int">idusergroup</column>
+			<status>NOTICE</status>
+			<controller>user</controller>
+			<where>
+				<condition>
+					<column type="int">userid</column>
+					<bind>user</bind>
+					<value>iduser</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>usergroupview</table>
+			<column type="int">idusergroupview</column>
+			<status>NOTICE</status>
+			<controller>user</controller>
+			<where>
+				<condition>
+					<column type="int">userid</column>
+					<bind>user</bind>
+					<value>iduser</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>userhistorylog</table>
+			<column type="int">iduserhistorylog</column>
+			<status>NOTICE</status>
+			<controller>user</controller>
+			<where>
+				<condition>
+					<column type="int">userid</column>
+					<bind>user</bind>
+					<value>iduser</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>
+	

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>vat</table>
+			<column type="int">idvat</column>
+			<status>RELATED</status>
+			<controller>vat</controller>
+			<where>
+				<condition>
+					<column type="int">idvat</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>vattranslation</table>
+			<column type="int">idvattranslation</column>
+			<status>NOTICE</status>
+			<controller>vat</controller>
+			<where>
+				<condition>
+					<column type="int">vatid</column>
+					<bind>vat</bind>
+					<value>idvat</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>product</table>
+			<column type="int">idproduct</column>
+			<status>ERROR</status>
+			<errormsg>ERR_VAT_BIND_TO_PRODUCT</errormsg>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">vatid</column>
+					<bind>vat</bind>
+					<value>idvat</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

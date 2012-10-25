@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>newsletter</table>
+			<column type="int">idnewsletter</column>
+			<status>RELATED</status>
+			<controller>newsletter</controller>
+			<where>
+				<condition>
+					<column type="int">idnewsletter</column>
+				</condition>
+			</where>
+		</query>
+		
+		
+		<query>
+		  	<table>clientgroupnewsletterhistory</table>
+		  	<column type="int">newsletterid</column>
+		  	<status>NOTICE</status>
+		  	<controller>newsletter</controller>
+		  	<where>
+		  		<condition>
+		  			<column type="int">newsletterid</column>
+		  			<bind>newsletter</bind>
+		  			<value>idnewsletter</value>
+		  		</condition>
+		  	</where>
+	  	</query>
+	  	
+	  	<query>
+		  	<table>clientnewsletterhistory</table>
+		  	<column type="int">newsletterid</column>
+		  	<status>NOTICE</status>
+		  	<controller>newsletter</controller>
+		  	<where>
+		  		<condition>
+		  			<column type="int">newsletterid</column>
+		  			<bind>newsletter</bind>
+		  			<value>idnewsletter</value>
+		  		</condition>
+		  	</where>
+	  	</query>
+	</queries>
+</mysql>

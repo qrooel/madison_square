@@ -1,0 +1,41 @@
+<mysql>
+	<queries>
+		<query>
+			<table>staticcontent</table>
+			<column type="int">idstaticcontent</column>
+			<status>RELATED</status>
+			<controller>staticcontent</controller>
+			<where>
+				<condition>
+					<column type="int">idstaticcontent</column>
+				</condition>
+			</where>
+		</query>
+		  <query>
+			<table>staticcontenttranslation</table>
+			<column type="int">idstaticcontenttranslation</column>
+			<status>NOTICE</status>
+			<controller>staticcontent</controller>
+			<where>
+				<condition>
+					<column type="int">staticcontentid</column>
+					<bind>staticcontent</bind>
+					<value>idstaticcontent</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticcontentview</table>
+			<column type="int">staticcontentid</column>
+			<status>NOTICE</status>
+			<controller>staticcontent</controller>
+			<where>
+				<condition>
+					<column type="int">staticcontentid</column>
+					<bind>staticcontent</bind>
+					<value>idstaticcontent</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

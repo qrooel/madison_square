@@ -1,0 +1,18 @@
+#header .layout-container,
+#navigation-bar .layout-container,
+.layout-container {
+	width: 1205px;
+}
+.layout-two-columns > .column.wide {
+	width: 866px;
+}
+
+.layout-two-columns > .column.wide-collapsed {
+	width: 982px;
+}
+
+.column.wide-collapsed .GForm .GF_Datagrid,
+.block .field-textarea span.field textarea, 
+.block .field-rich-text-editor span.field textarea {
+	width: 726px;
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>clientgroup</table>
+			<column type="int">idclientgroup</column>
+			<status>RELATED</status>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">idclientgroup</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rulescartclientgroup</table>
+			<column type="int">idrulescartclientgroup</column>
+			<status>NOTICE</status>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">clientgroupid</column>
+					<bind>clientgroup</bind>
+					<value>idclientgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientgroupnewsletterhistory</table>
+			<column type="int">idclientgroupnewsletterhistory</column>
+			<status>NOTICE</status>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">clientgroupid</column>
+					<bind>clientgroup</bind>
+					<value>idclientgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientdata</table>
+			<column type="varchar" encryption="1">firstname</column>
+			<column type="varchar" encryption="1">surname</column>
+			<column type="varchar" encryption="1">email</column>
+			<status>ERROR</status>
+			<errormsg>ERR_FOUND_CLIENTS_IN_GROUP_THAT_IS_DUE_TO_BE_DELETED</errormsg>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientgroupid</column>
+					<bind>clientgroup</bind>
+					<value>idclientgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientgrouptranslation</table>
+			<column type="int">idclientgrouptranslation</column>
+			<status>NOTICE</status>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">clientgroupid</column>
+					<bind>clientgroup</bind>
+					<value>idclientgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>assigntogroup</table>
+			<column type="int">viewid</column>
+			<status>NOTICE</status>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">clientgroupid</column>
+					<bind>clientgroup</bind>
+					<value>idclientgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>view</table>
+			<column type="int">idview</column>
+			<column type="varchar">name</column>
+			<status>ERROR</status>
+			<errormsg>ERR_BIND_VIEW_TO_ASSIGNTOGROUP</errormsg>
+			<controller>clientgroup</controller>
+			<where>
+				<condition>
+					<column type="int">idview</column>
+					<bind>assigntogroup</bind>
+					<value>viewid</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

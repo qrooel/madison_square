@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>translation</table>
+			<column type="int">idtranslation</column>
+			<status>RELATED</status>
+			<controller>translation</controller>
+			<where>
+				<condition>
+					<column type="int">idtranslation</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>translationdata</table>
+			<column type="int">idtranslationdata</column>
+			<status>NOTICE</status>
+			<controller>translation</controller>
+			<where>
+				<condition>
+					<column type="int">translationid</column>
+					<bind>translation</bind>
+					<value>idtranslation</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

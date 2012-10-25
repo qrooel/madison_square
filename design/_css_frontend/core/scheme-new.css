@@ -1,0 +1,77 @@
+#horizontal-navigation {
+	z-index: 1000;
+}
+#horizontal-navigation li {
+	padding-left: 2px;
+}
+
+#horizontal-navigation li ul {
+	border: solid 1px #c8c8c8;
+	background: #fff;
+}
+
+#horizontal-navigation li ul li {
+	background: #fff;
+	border-top: solid 1px #dedede;
+}
+
+#horizontal-navigation li ul li:first-child {
+	border-top: none;
+}
+#horizontal-navigation li ul li a,
+#horizontal-navigation li ul li a:hover,
+#horizontal-navigation li ul li a:focus,
+#horizontal-navigation li ul li a:active,
+#horizontal-navigation li ul li a.active,
+#footer li a {
+	background: transparent url('../../_images_frontend/core/icons/bullets.png') 0 center no-repeat;
+}
+
+#horizontal-navigation li ul li a {
+	font-family: Arial;
+	font-size: 11px;
+	color: #000;
+	line-height: 1.5em;
+	font-weight: normal;
+	text-align: left;
+	background-position: 0px -5px;
+}
+
+#horizontal-navigation li ul li a:hover,
+#horizontal-navigation li ul li a:focus,
+#horizontal-navigation li ul li a:active{
+	font-family: Arial;
+	font-size: 11px;
+	color: #000;
+	font-weight: normal;
+	text-decoration: underline;
+	background-position: 0px -5px;
+}
+
+#horizontal-navigation li ul li a.active{
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000;
+	background-position: 0px -5px;
+}
+
+#horizontal-navigation li ul li a.current{
+	font-weight: bold;
+}
+
+
+#footer li a {
+	background-position: 0 5px;
+}
+
+.layout-box .layout-box-content {
+	margin-top: 1px;
+}
+.layout-box.layout-box-type-slide-show .layout-box-content{
+	padding:0px;
+}
+
+.layout-box-option-fixed-false h1 {
+	cursor: move;
+}

@@ -1,0 +1,15 @@
+<mysql>
+ <queries>
+  <query>
+   <table>invoice</table>
+   <column type="int">idinvoice</column>
+   <status>RELATED</status>
+   <controller>invoice</controller>
+   <where>
+    <condition>
+    	<column type="int">idinvoice</column>
+    </condition>
+   </where>
+  </query>
+ </queries>
+</mysql>

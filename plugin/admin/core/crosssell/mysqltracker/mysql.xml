@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>crosssell</table>
+			<column type="int">idcrosssell</column>
+			<status>RELATED</status>
+			<controller>crosssell</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

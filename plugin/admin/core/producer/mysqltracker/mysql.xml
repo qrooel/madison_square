@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>producer</table>
+			<column type="int">idproducer</column>
+			<status>RELATED</status>
+			<controller>producer</controller>
+			<where>
+				<condition>
+					<column type="int">idproducer</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producerview</table>
+			<column type="int">idproducerview</column>
+			<status>NOTICE</status>
+			<controller>producer</controller>
+			<where>
+				<condition>
+					<column type="int">producerid</column>
+					<bind>producer</bind>
+					<value>idproducer</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producerdeliverer</table>
+			<column type="int">idproducerdeliverer</column>
+			<status>NOTICE</status>
+			<controller>deliverer</controller>
+			<where>
+				<condition>
+					<column type="int">producerid</column>
+					<bind>producer</bind>
+					<value>idproducer</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>product</table>
+			<column type="int">idproduct</column>
+			<status>ERROR</status>
+			<errormsg>ERR_PRODUCER_BIND_TO_PRODUCT</errormsg>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">producerid</column>
+					<bind>producer</bind>
+					<value>idproducer</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producertranslation</table>
+			<column type="int">idproducertranslation</column>
+			<status>NOTICE</status>
+			<controller>producer</controller>
+			<where>
+				<condition>
+					<column type="int">producerid</column>
+					<bind>producer</bind>
+					<value>idproducer</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>group</table>
+			<column type="int">idgroup</column>
+			<status>RELATED</status>
+			<controller>groups</controller>
+			<where>
+				<condition>
+					<column type="int">idgroup</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>right</table>
+			<column type="int">idright</column>
+			<status>NOTICE</status>
+			<controller>groups</controller>
+			<where>
+				<condition>
+					<column type="int">groupid</column>
+					<bind>group</bind>
+					<value>idgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>usergroup</table>
+			<column type="int">userid</column>
+			<status>NOTICE</status>
+			<controller>users</controller>
+			<where>
+				<condition>
+					<column type="int">groupid</column>
+					<bind>group</bind>
+					<value>idgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>userdata</table>
+			<column type="varchar">firstname</column>
+			<column type="varchar">surname</column>
+			<column type="varchar">email</column>
+			<status>ERROR</status>
+			<errormsg>ERR_FOUND_USERS_IN_GROUP_THAT_IS_DUE_TO_BE_DELETED</errormsg>
+			<controller>users</controller>
+			<where>
+				<condition>
+					<column type="int">userid</column>
+					<bind>usergroup</bind>
+					<value>userid</value>
+				</condition>	
+			</where>
+		</query>
+	</queries>
+</mysql>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>language</table>
+			<column type="int">idlanguage</column>
+			<status>RELATED</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">idlanguage</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producttranslation</table>
+			<column type="int">idproducttranslation</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>categorytranslation</table>
+			<column type="int">idcategorytranslation</column>
+			<status>NOTICE</status>
+			<controller>category</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientgrouptranslation</table>
+			<column type="int">idclientgrouptranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contentcategorytranslation</table>
+			<column type="int">idcontentcategorytranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticcontenttranslation</table>
+			<column type="int">idstaticcontenttranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>viewtranslation</table>
+			<column type="int">idviewtranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>translationdata</table>
+			<column type="int">idtranslationdata</column>
+			<status>NOTICE</status>
+			<controller>translation</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>languageview</table>
+			<column type="int">languageid</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+     				<column type="int">languageid</column>
+				    <bind>language</bind>
+				    <value>idlanguage</value>
+    			</condition>
+			</where>
+		</query>
+		<query>
+			<table>vattranslation</table>
+			<column type="int">idvattranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderstatusgroupstranslation</table>
+			<column type="int">idorderstatusgroupstranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderstatustranslation</table>
+			<column type="int">idorderstatustranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pollanswers</table>
+			<column type="int">idpollanswers</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>polltranslation</table>
+			<column type="int">idpolltranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>controllerseo</table>
+			<column type="int">idcontrollerseo</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>deliverertranslation</table>
+			<column type="int">iddeliverertranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>newstranslation</table>
+			<column type="int">idnewstranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producertranslation</table>
+			<column type="int">idproducertranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contacttranslation</table>
+			<column type="int">idcontacttranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rangetypetranslation</table>
+			<column type="int">idrangetypetranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxtranslation</table>
+			<column type="int">idlayoutboxtranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxcontentspecificvalue</table>
+			<column type="int">idlayoutboxcontentspecificvalue</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticattributetranslation</table>
+			<column type="int">idstaticattributetranslation</column>
+			<status>NOTICE</status>
+			<controller>language</controller>
+			<where>
+				<condition>
+					<column type="int">languageid</column>
+					<bind>language</bind>
+					<value>idlanguage</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

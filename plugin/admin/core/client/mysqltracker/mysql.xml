@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>client</table>
+			<column type="int">idclient</column>
+			<status>RELATED</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">idclient</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientdata</table>
+			<column type="int">idclientdata</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>missingcart</table>
+			<column type="int">idmissingcart</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>missingcartproduct</table>
+			<column type="int">idmissingcartproduct</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">missingcartid</column>
+					<bind>missingcart</bind>
+					<value>idmissingcart</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientaddress</table>
+			<column type="int">idclientaddress</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>wishlist</table>
+			<column type="int">idwishlist</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>answervolunteered</table>
+			<column type="int">idanswervolunteered</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clienthistorylog</table>
+			<column type="int">idclienthistorylog</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producttags</table>
+			<column type="int">idproducttags</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productreview</table>
+			<column type="int">idproductreview</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productrange</table>
+			<column type="int">idproductrange</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">productreviewid</column>
+					<bind>productreview</bind>
+					<value>idproductreview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientnotes</table>
+			<column type="int">idclientnotes</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>recipientclientlist</table>
+			<column type="int">idrecipientclientlist</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>substitutedserviceclients</table>
+			<column type="int">idsubstitutedserviceclients</column>
+			<status>NOTICE</status>
+			<controller>client</controller>
+			<where>
+				<condition>
+					<column type="int">clientid</column>
+					<bind>client</bind>
+					<value>idclient</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

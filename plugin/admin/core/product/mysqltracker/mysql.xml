@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>product</table>
+			<column type="int">idproduct</column>
+			<status>RELATED</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">idproduct</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderproduct</table>
+			<column type="int">orderid</column>
+			<status>ERROR</status>
+			<errormsg>ERR_BIND_PRODUCT_ORDER</errormsg>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productcategory</table>
+			<column type="int">idproductcategory</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>missingcartproduct</table>
+			<column type="int">idmissingcartproduct</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productphoto</table>
+			<column type="int">idproductphoto</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productattributeset</table>
+			<column type="int">idproductattributeset</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productattributevalueset</table>
+			<column type="int">idproductattributevalueset</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productattributesetid</column>
+					<bind>productattributeset</bind>
+					<value>idproductattributeset</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productgroupprice</table>
+			<column type="int">idproductgroupprice</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productsearch</table>
+			<column type="int">idproductsearch</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productdeliverer</table>
+			<column type="int">productid</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productnew</table>
+			<column type="int">productid</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producttags</table>
+			<column type="int">productid</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>wishlist</table>
+			<column type="int">productid</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producttranslation</table>
+			<column type="int">idproducttranslation</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productfile</table>
+			<column type="int">idproductfile</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productreview</table>
+			<column type="int">idproductreview</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productrange</table>
+			<column type="int">idproductrange</column>
+			<status>NOTICE</status>
+			<controller>product</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+					<bind>product</bind>
+					<value>idproduct</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

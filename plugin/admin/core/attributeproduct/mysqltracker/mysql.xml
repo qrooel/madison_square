@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>attributeproduct</table>
+			<column type="int">idattributeproduct</column>
+			<status>RELATED</status>
+			<controller>attributeproduct</controller>
+			<where>
+				<condition>
+					<column type="int">idattributeproduct</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>attributeproductvalue</table>
+			<column type="int">idattributeproductvalue</column>
+			<status>NOTICE</status>
+			<controller>attributeproduct</controller>
+			<where>
+				<condition>
+					<column type="int">attributeproductid</column>
+					<bind>attributeproduct</bind>
+					<value>idattributeproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productattributevalueset</table>
+			<column type="int">idproductattributevalueset</column>
+			<status>NOTICE</status>
+			<controller>attributeproduct</controller>
+			<where>
+				<condition>
+					<column type="int">attributeproductvalueid</column>
+					<bind>attributeproductvalue</bind>
+					<value>idattributeproductvalue</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>attributegroup</table>
+			<column type="int">idattributegroup</column>
+			<status>NOTICE</status>
+			<controller>attributeproduct</controller>
+			<where>
+				<condition>
+					<column type="int">attributeproductid</column>
+					<bind>attributeproduct</bind>
+					<value>idattributeproduct</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>categoryattributeproduct</table>
+			<column type="int">attributegroupnameid</column>
+			<status>NOTICE</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">attributeproductid</column>
+					<bind>attributeproduct</bind>
+					<value>idattributeproduct</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

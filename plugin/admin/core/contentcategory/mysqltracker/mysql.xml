@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>contentcategory</table>
+			<column type="int">idcontentcategory</column>
+			<status>RELATED</status>
+			<controller>contentcategory</controller>
+			<where>
+				<condition>
+					<column type="int">idcontentcategory</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contentcategorytranslation</table>
+			<column type="int">idcontentcategorytranslation</column>
+			<status>NOTICE</status>
+			<controller>contentcategory</controller>
+			<where>
+				<condition>
+					<column type="int">contentcategoryid</column>
+					<bind>contentcategory</bind>
+					<value>idcontentcategory</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contentcategoryview</table>
+			<column type="int">contentcategoryid</column>
+			<status>NOTICE</status>
+			<controller>contentcategory</controller>
+			<where>
+				<condition>
+					<column type="int">contentcategoryid</column>
+					<bind>contentcategory</bind>
+					<value>idcontentcategory</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contentcategory</table>
+			<alias>contentcategory_1</alias>
+			<column type="int">idcontentcategory</column>
+			<status>ERROR</status>
+			<errormsg>ERR_CONTENTCATEGORY_BIND_TO_CONTENTCATEGORY</errormsg>
+			<controller>contentcategory</controller>
+			<where>
+				<condition>
+					<column type="int">contentcategoryid</column>
+					<bind>contentcategory</bind>
+					<value>idcontentcategory</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticcontent</table>
+			<column type="int">idstaticcontent</column>
+			<status>ERROR</status>
+			<errormsg>ERR_CONTENTCATEGORY_BIND_TO_STATICBLOCKS</errormsg>
+			<controller>staticblocks</controller>
+			<where>
+				<condition>
+					<column type="int">contentcategoryid</column>
+					<bind>contentcategory</bind>
+					<value>idcontentcategory</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

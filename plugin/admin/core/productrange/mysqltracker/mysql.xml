@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>productreview</table>
+			<column type="int">idproductreview</column>
+			<status>RELATED</status>
+			<controller>productrange</controller>
+			<where>
+				<condition>
+					<column type="int">idproductreview</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productrange</table>
+			<column type="int">idproductrange</column>
+			<status>NOTICE</status>
+			<controller>productrange</controller>
+			<where>
+				<condition>
+					<column type="int">productreviewid</column>
+					<bind>productreview</bind>
+					<value>idproductreview</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

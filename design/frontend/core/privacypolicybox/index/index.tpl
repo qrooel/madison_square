@@ -1,0 +1,1 @@
+{$privacypolicybox.privacy}

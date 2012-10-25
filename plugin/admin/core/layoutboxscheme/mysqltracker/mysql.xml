@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>layoutboxscheme</table>
+			<column type="int">idlayoutboxscheme</column>
+			<status>RELATED</status>
+			<controller>layoutboxscheme</controller>
+			<where>
+				<condition>
+					<column type="int">idlayoutboxscheme</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxschemecss</table>
+			<column type="int">layoutboxschemeid</column>
+			<status>NOTICE</status>
+			<controller>layoutboxscheme</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxschemeid</column>
+					<bind>layoutboxscheme</bind>
+					<value>idlayoutboxscheme</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxschemecssvalue</table>
+			<column type="int">layoutboxschemeid</column>
+			<status>NOTICE</status>
+			<controller>layoutboxscheme</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxschemeid</column>
+					<bind>layoutboxscheme</bind>
+					<value>idlayoutboxscheme</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

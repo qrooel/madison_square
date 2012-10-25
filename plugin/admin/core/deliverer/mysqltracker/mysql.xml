@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>deliverer</table>
+			<column type="int">iddeliverer</column>
+			<status>RELATED</status>
+			<controller>deliverer</controller>
+			<where>
+				<condition>
+					<column type="int">iddeliverer</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productdeliverer</table>
+			<column type="int">idproductdeliverer</column>
+			<status>NOTICE</status>
+			<controller>deliverer</controller>
+			<where>
+				<condition>
+					<column type="int">delivererid</column>
+					<bind>deliverer</bind>
+					<value>iddeliverer</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producerdeliverer</table>
+			<column type="int">idproducerdeliverer</column>
+			<status>NOTICE</status>
+			<controller>deliverer</controller>
+			<where>
+				<condition>
+					<column type="int">delivererid</column>
+					<bind>deliverer</bind>
+					<value>iddeliverer</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>deliverertranslation</table>
+			<column type="int">iddeliverertranslation</column>
+			<status>NOTICE</status>
+			<controller>deliverer</controller>
+			<where>
+				<condition>
+					<column type="int">delivererid</column>
+					<bind>deliverer</bind>
+					<value>iddeliverer</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

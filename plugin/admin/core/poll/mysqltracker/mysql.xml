@@ -1,0 +1,67 @@
+<mysql>
+ <queries>
+		<query>
+		   <table>poll</table>
+		   <column type="int">idpoll</column>
+		   <status>RELATED</status>
+		   <controller>poll</controller>
+		   <where>
+		    	<condition>
+		     	<column type="int">idpoll</column>
+		    	</condition>
+		   </where>
+		</query>
+		<query>
+			<table>polltranslation</table>
+			<column type="int">idpolltranslation</column>
+			<status>NOTICE</status>
+			<controller>poll</controller>
+			<where>
+				<condition>
+					<column type="int">pollid</column>
+					<bind>poll</bind>
+					<value>idpoll</value>
+				</condition>
+			</where>
+		</query>
+  		<query>
+			<table>pollanswers</table>
+			<column type="int">idpollanswers</column>
+			<status>NOTICE</status>
+			<controller>poll</controller>
+			<where>
+				<condition>
+					<column type="int">pollid</column>
+					<bind>poll</bind>
+					<value>idpoll</value>
+				</condition>
+			</where>
+		</query>
+  		<query>	
+			<table>answervolunteered</table>
+			<column type="int">pollanswersid</column>
+			<status>NOTICE</status>
+			<controller>pollanswers</controller>
+			<where>
+				<condition>
+					<column type="int">pollanswersid</column>
+					<bind>pollanswers</bind>
+					<value>idpollanswers</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pollview</table>
+			<column type="int">pollid</column>
+			<status>NOTICE</status>
+			<controller>poll</controller>
+			<where>
+				<condition>
+					<column type="int">pollid</column>
+					<bind>poll</bind>
+					<value>idpoll</value>
+				</condition>
+			</where>
+		</query>
+ </queries>
+</mysql>

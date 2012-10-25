@@ -1,0 +1,92 @@
+<h2><img src="{$DESIGNPATH}_images_panel/icons/modules/translation-list.png" alt=""/>{trans}TXT_CONTROLLER_SEO_LIST{/trans}</h2>
+
+ 
+<ul class="possibilities">
+	<li><a href="{$URL}{$CURRENT_CONTROLLER}/add" class="button"><span><img src="{$DESIGNPATH}_images_panel/icons/buttons/add.png" alt=""/>{trans}TXT_ADD_CONTROLLER_SEO{/trans}</span></a></li>
+</ul>
+
+<div class="block">
+	<div id="list-controllerseo"></div>
+</div>
+
+<script type="text/javascript">
+   
+   {literal}
+   
+   /*<![CDATA[*/
+	 function editControllerSeo(dg, id) {
+    location.href = '{/literal}{$URL}{$CURRENT_CONTROLLER}/edit/{literal}' + id + '';
+	 };
+
+	 var theDatagrid;
+	 
+   $(document).ready(function() {
+		
+		var column_id = new GF_Datagrid_Column({
+			id: 'idcontroller',
+			caption: '{/literal}{trans}TXT_ID{/trans}{literal}',
+			appearance: {
+				width: 90,
+				visible: false
+			},
+			filter: {
+				type: GF_Datagrid.FILTER_BETWEEN,
+			}
+		});
+		
+		var column_name = new GF_Datagrid_Column({
+			id: 'name',
+			caption: '{/literal}{trans}TXT_NAME{/trans}{literal}',
+			filter: {
+				type: GF_Datagrid.FILTER_AUTOSUGGEST,
+			}
+		});
+		
+		var column_translation = new GF_Datagrid_Column({
+			id: 'translation',
+			editable: true,
+			caption: '{/literal}{trans}TXT_TRANSLATION{/trans}{literal}',
+			filter: {
+				type: GF_Datagrid.FILTER_AUTOSUGGEST,
+				source: xajax_GetTranslationSuggestions,
+			}
+		});
+
+    var options = {
+			id: 'controller',
+			mechanics: {
+				key: 'idcontroller',
+				rows_per_page: {/literal}{$globalsettings.interface.datagrid_rows_per_page}{literal}
+			},
+			event_handlers: {
+				load: xajax_LoadAllControllerSeo,
+				edit_row: editControllerSeo,
+				update_row: function(sId, oRow) {
+					xajax_doUpdateControllerSeo(sId, oRow.translation);
+				},
+				{/literal}{if $globalsettings.interface.datagrid_click_row_action == 'edit'}{literal}
+				click_row: editControllerSeo
+				{/literal}{/if}{literal}
+			},
+			columns: [
+				column_id,
+				column_name,
+				column_translation,
+			],
+			row_actions: [
+				GF_Datagrid.ACTION_EDIT
+			],
+			context_actions: [
+				GF_Datagrid.ACTION_EDIT
+			]
+    };
+    
+    theDatagrid = new GF_Datagrid($('#list-controllerseo'), options);
+		
+	 });
+   
+   /*]]>*/
+   
+   {/literal}
+   
+  </script>

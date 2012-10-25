@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+	<query>
+		<table>category</table>
+		<column type="int">idcategory</column>
+		<status>RELATED</status>
+		<controller>category</controller>
+		<where>
+			<condition>
+				<column type="int">idcategory</column>
+			</condition>
+		</where>
+  	</query>
+  	<query>
+   		<table>categorytranslation</table>
+   		<column type="int">idcategorytranslation</column>
+   		<status>NOTICE</status>
+   		<controller>category</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+  	<query>
+   		<table>productcategory</table>
+   		<column type="int">productid</column>
+   		<status>NOTICE</status>
+   		<controller>product</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+  	<query>
+   		<table>viewcategory</table>
+   		<column type="int">idviewcategory</column>
+   		<status>NOTICE</status>
+   		<controller>category</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+  	<query>
+   		<table>categoryattributeproduct</table>
+   		<column type="int">idcategoryattributeproduct</column>
+   		<status>NOTICE</status>
+   		<controller>category</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+  	<query>
+   		<table>rangetypecategory</table>
+   		<column type="int">idrangetypecategory</column>
+   		<status>NOTICE</status>
+   		<controller>category</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+  	<query>
+   		<table>categorypath</table>
+   		<column type="int">idcategorypath</column>
+   		<status>NOTICE</status>
+   		<controller>category</controller>
+   		<where>
+    		<condition>
+     			<column type="int">categoryid</column>
+     			<bind>category</bind>
+     			<value>idcategory</value>
+    		</condition>
+   		</where>
+  	</query>
+ 	</queries>
+</mysql>

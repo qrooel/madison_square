@@ -1,0 +1,54 @@
+<mysql>
+ <queries>
+  <query>
+   <table>news</table>
+   <column type="int">idnews</column>
+   <status>RELATED</status>
+   <controller>news</controller>
+   <where>
+    <condition>
+     <column type="int">idnews</column>
+    </condition>
+   </where>
+  </query>
+  <query>
+			<table>newstranslation</table>
+			<column type="int">idnewstranslation</column>
+			<status>NOTICE</status>
+			<controller>news</controller>
+			<where>
+				<condition>
+					<column type="int">newsid</column>
+					<bind>news</bind>
+					<value>idnews</value>
+				</condition>
+			</where>
+		</query>
+<query>
+			<table>newsview</table>
+			<column type="int">idnewsview</column>
+			<status>NOTICE</status>
+			<controller>news</controller>
+			<where>
+				<condition>
+					<column type="int">newsid</column>
+					<bind>news</bind>
+					<value>idnews</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>newsphoto</table>
+			<column type="int">idnewsphoto</column>
+			<status>NOTICE</status>
+			<controller>news</controller>
+			<where>
+				<condition>
+					<column type="int">newsid</column>
+					<bind>news</bind>
+					<value>idnews</value>
+				</condition>
+			</where>
+		</query>
+ </queries>
+</mysql>

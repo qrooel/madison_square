@@ -1,0 +1,119 @@
+<mysql>
+ <queries>
+  <query>
+   <table>order</table>
+   <column type="int">idorder</column>
+   <status>RELATED</status>
+   <controller>order</controller>
+   <where>
+    <condition>
+    	<column type="int">idorder</column>
+    </condition>
+   </where>
+  </query>
+  <query>
+  	<table>orderclientdata</table>
+  	<column type="int">idorderclientdata</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>orderclientdeliverydata</table>
+  	<column type="int">idorderclientdeliverydata</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>orderhistory</table>
+  	<column type="int">idorderhistory</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>invoice</table>
+  	<column type="int">idinvoice</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>ordernotes</table>
+  	<column type="int">idordernotes</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>orderfiles</table>
+  	<column type="int">idorderfiles</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>orderproduct</table>
+  	<column type="int">idorderproduct</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderid</column>
+  			<bind>order</bind>
+  			<value>idorder</value>
+  		</condition>
+  	</where>
+  </query>
+  <query>
+  	<table>orderproductattribute</table>
+  	<column type="int">idorderproductattribute</column>
+  	<status>NOTICE</status>
+  	<controller>order</controller>
+  	<where>
+  		<condition>
+  			<column type="int">orderproductid</column>
+  			<bind>orderproduct</bind>
+  			<value>idorderproduct</value>
+  		</condition>
+  	</where>
+  </query>
+ </queries>
+</mysql>

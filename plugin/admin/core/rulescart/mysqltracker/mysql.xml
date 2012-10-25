@@ -1,0 +1,54 @@
+<mysql>
+	<queries>
+		<query>
+			<table>rulescart</table>
+			<column type="int">idrulescart</column>
+			<status>RELATED</status>
+			<controller>rulescart</controller>
+			<where>
+				<condition>
+					<column type="int">idrulescart</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rulescartrule</table>
+			<column type="int">idrulescartrule</column>
+			<status>NOTICE</status>
+			<controller>rulescart</controller>
+			<where>
+				<condition>
+					<column type="int">rulescartid</column>
+					<bind>rulescart</bind>
+					<value>idrulescart</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rulescartview</table>
+			<column type="int">idrulescartview</column>
+			<status>NOTICE</status>
+			<controller>rulescart</controller>
+			<where>
+				<condition>
+					<column type="int">rulescartid</column>
+					<bind>rulescart</bind>
+					<value>idrulescart</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rulescartclientgroup</table>
+			<column type="int">idrulescartclientgroup</column>
+			<status>NOTICE</status>
+			<controller>rulescart</controller>
+			<where>
+				<condition>
+					<column type="int">rulescartid</column>
+					<bind>rulescart</bind>
+					<value>idrulescart</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

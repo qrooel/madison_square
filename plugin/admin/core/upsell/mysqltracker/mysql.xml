@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>upsell</table>
+			<column type="int">idupsell</column>
+			<status>RELATED</status>
+			<controller>upsell</controller>
+			<where>
+				<condition>
+					<column type="int">productid</column>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

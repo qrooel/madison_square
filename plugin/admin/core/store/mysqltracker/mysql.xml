@@ -1,0 +1,41 @@
+<mysql>
+ <queries>
+		<query>
+		   <table>store</table>
+		   <column type="int">idstore</column>
+		   <status>RELATED</status>
+		   <controller>store</controller>
+		   <where>
+		    	<condition>
+		     	<column type="int">idstore</column>
+		    	</condition>
+		   </where>
+		</query>
+  		<query>
+			<table>view</table>
+			<column type="int">idview</column>
+			<status>ERROR</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">storeid</column>
+					<bind>store</bind>
+					<value>idstore</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>right</table>
+			<column type="int">idright</column>
+			<status>NOTICE</status>
+			<controller>store</controller>
+			<where>
+				<condition>
+					<column type="int">storeid</column>
+					<bind>store</bind>
+					<value>idstore</value>
+				</condition>
+			</where>
+		</query>
+ </queries>
+</mysql>

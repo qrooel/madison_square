@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>contact</table>
+			<column type="int">idcontact</column>
+			<status>RELATED</status>
+			<controller>contact</controller>
+			<where>
+				<condition>
+					<column type="int">idcontact</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contactview</table>
+			<column type="int">contactid</column>
+			<status>NOTICE</status>
+			<controller>contact</controller>
+			<where>
+				<condition>
+					<column type="int">contactid</column>
+					<bind>contact</bind>
+					<value>idcontact</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contacttranslation</table>
+			<column type="int">contactid</column>
+			<status>NOTICE</status>
+			<controller>contact</controller>
+			<where>
+				<condition>
+					<column type="int">contactid</column>
+					<bind>contact</bind>
+					<value>idcontact</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

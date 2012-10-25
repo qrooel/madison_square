@@ -1,0 +1,1 @@
+{$termsandcondiotionsbox.conditions}

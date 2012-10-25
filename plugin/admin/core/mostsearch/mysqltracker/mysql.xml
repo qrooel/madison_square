@@ -1,0 +1,15 @@
+<mysql>
+ <queries>
+  <query>
+   <table>mostsearch</table>
+   <column type="int">idmostsearch</column>
+   <status>RELATED</status>
+   <controller>mostsearch</controller>
+   <where>
+    <condition>
+     <column type="int">idmostsearch</column>
+    </condition>
+   </where>
+  </query>
+ </queries>
+</mysql>

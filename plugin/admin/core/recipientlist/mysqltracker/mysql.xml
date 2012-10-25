@@ -1,0 +1,54 @@
+<mysql>
+ <queries>
+		<query>
+		   <table>recipientlist</table>
+		   <column type="int">idrecipientlist</column>
+		   <status>RELATED</status>
+		   <controller>recipientlist</controller>
+		   <where>
+		    	<condition>
+		     	<column type="int">idrecipientlist</column>
+		    	</condition>
+		   </where>
+		</query>
+		<query>
+			<table>recipientclientgrouplist</table>
+			<column type="int">idrecipientclientgrouplist</column>
+			<status>NOTICE</status>
+			<controller>recipientlist</controller>
+		   <where>
+		    	<condition>
+		     		<column type="int">recipientlistid</column>
+		     		<bind>recipientlist</bind>
+					<value>idrecipientlist</value>
+		    	</condition>
+		   </where>
+		</query> 
+		<query>
+			<table>recipientclientlist</table>
+			<column type="int">idrecipientclientlist</column>
+			<status>NOTICE</status>
+			<controller>recipientlist</controller>
+		   <where>
+		    	<condition>
+		     		<column type="int">recipientlistid</column>
+		     		<bind>recipientlist</bind>
+					<value>idrecipientlist</value>
+		    	</condition>
+		   </where>
+		</query> 
+		<query>
+			<table>recipientnewsletterlist</table>
+			<column type="int">idrecipientnewsletterlist</column>
+			<status>NOTICE</status>
+			<controller>recipientlist</controller>
+		   <where>
+		    	<condition>
+		     		<column type="int">recipientlistid</column>
+		     		<bind>recipientlist</bind>
+					<value>idrecipientlist</value>
+		    	</condition>
+		   </where>
+		</query> 
+ </queries>
+</mysql>

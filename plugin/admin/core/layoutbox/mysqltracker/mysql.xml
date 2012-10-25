@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>layoutbox</table>
+			<column type="int">idlayoutbox</column>
+			<status>RELATED</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">idlayoutbox</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>subpagelayoutcolumnbox</table>
+			<column type="int">layoutboxid</column>
+			<status>NOTICE</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxid</column>
+					<bind>layoutbox</bind>
+					<value>idlayoutbox</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxcontentspecificvalue</table>
+			<column type="int">layoutboxid</column>
+			<status>NOTICE</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxid</column>
+					<bind>layoutbox</bind>
+					<value>idlayoutbox</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxjsvalue</table>
+			<column type="int">layoutboxid</column>
+			<status>NOTICE</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxid</column>
+					<bind>layoutbox</bind>
+					<value>idlayoutbox</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxcssvalue</table>
+			<column type="int">layoutboxid</column>
+			<status>NOTICE</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxid</column>
+					<bind>layoutbox</bind>
+					<value>idlayoutbox</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>layoutboxcss</table>
+			<column type="int">layoutboxid</column>
+			<status>NOTICE</status>
+			<controller>layoutbox</controller>
+			<where>
+				<condition>
+					<column type="int">layoutboxid</column>
+					<bind>layoutbox</bind>
+					<value>idlayoutbox</value>
+				</condition>
+			</where>
+		</query>
+	
+	</queries>
+</mysql>

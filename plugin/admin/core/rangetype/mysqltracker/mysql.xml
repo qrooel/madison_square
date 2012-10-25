@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>rangetype</table>
+			<column type="int">idrangetype</column>
+			<status>RELATED</status>
+			<controller>rangetype</controller>
+			<where>
+				<condition>
+					<column type="int">idrangetype</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rangetypecategory</table>
+			<column type="int">idrangetypecategory</column>
+			<status>NOTICE</status>
+			<controller>rangetype</controller>
+			<where>
+				<condition>
+					<column type="int">rangetypeid</column>
+					<bind>rangetype</bind>
+					<value>idrangetype</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productrange</table>
+			<column type="int">idproductrange</column>
+			<status>NOTICE</status>
+			<controller>rangetype</controller>
+			<where>
+				<condition>
+					<column type="int">rangetypeid</column>
+					<bind>rangetype</bind>
+					<value>idrangetype</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rangetypetranslation</table>
+			<column type="int">idrangetypetranslation</column>
+			<status>NOTICE</status>
+			<controller>rangetype</controller>
+			<where>
+				<condition>
+					<column type="int">rangetypeid</column>
+					<bind>rangetype</bind>
+					<value>idrangetype</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+<install version="0.9.2">
+<query>DROP TABLE `test`</query>
+</install>
+<install version="0.9.2129">
+<query>ALTER TABLE `userdata` MODIFY COLUMN `lastlogged` datetime DEFAULT NULL</query>
+</install>
+<install version="0.9.2130">
+<query></query>
+</install>
+<install version="0.9.2132">
+<query>DROP TABLE inheritancerule</query>
+<query>DROP TABLE oscommercecategory</query>
+<query>DROP TABLE paymenthistory</query>
+<query>DROP TABLE promotionrule</query>
+<query>DROP TABLE promotionruleview</query>
+<query>DROP TABLE sqlcondition</query>
+<query>DROP TABLE sqltype</query>
+<query>DROP TABLE wordpress</query>
+<query>DROP TABLE wordpressproduct</query>
+<query>DROP TABLE wordpresswebsite</query>
+</install>
+<install version="0.9.2135">
+<query>ALTER TABLE `unitmeasure` DROP COLUMN `name`</query>
+<query>ALTER TABLE `unitmeasure` DROP COLUMN `shortname`</query>
+</install>
+<install version="0.9.2136">
+<query>ALTER TABLE `store` DROP COLUMN `googleanalitycsaccount`</query>
+<query>ALTER TABLE `store` DROP COLUMN `googleanalitycsemail`</query>
+<query>ALTER TABLE `store` DROP COLUMN `googleanalitycspassword`</query>
+<query>ALTER TABLE `pollanswers` DROP INDEX `UNIQUE_pollanswers_name_pollid`</query>
+</install>
+<install version="0.9.2141">
+<query>ALTER TABLE `rulescatalog` MODIFY COLUMN `name` varchar(255) DEFAULT NULL</query>
+</install>
+<install version="0.9.2142">
+<query>DROP TABLE `paypalsettings`</query>
+</install>
+<install version="0.9.2143">
+<query>ALTER TABLE `view` ADD COLUMN `photoid` int(10) unsigned DEFAULT NULL AFTER `gatransactions`</query>
+</install>
+<install version="0.9.2144">
+<query>ALTER TABLE `view` ADD COLUMN `offline` int(10) unsigned NOT NULL DEFAULT '0' AFTER `photoid`</query>
+<query>ALTER TABLE `view` ADD COLUMN `offlinetext` text AFTER `offline`</query>
+</install>
+<install version="0.9.2147">
+<query>ALTER TABLE `view` ADD COLUMN `cartredirect` varchar(45) DEFAULT NULL AFTER `offlinetext`</query>
+<query>ALTER TABLE `view` ADD COLUMN `trackstock` int(10) unsigned DEFAULT '1' AFTER `cartredirect`</query>
+<query>UPDATE controller SET description = CONCAT('TXT_CONTROLLER_',UPPER(name))</query>
+<query>ALTER TABLE `attributeproductvalue` DROP INDEX `UNIQUE_attributeproductvalue_name_attributeproductid`</query>
+<query>ALTER TABLE `attributeproduct` DROP INDEX `UNIQUE_attributeproduct_name`</query>
+</install>
+<install version="0.9.2148">
+<query>ALTER TABLE `translationdata` MODIFY COLUMN `translation` text NOT NULL</query>
+</install>
+<install version="0.9.2149">
+<query>ALTER TABLE `contacttranslation` ADD COLUMN `businesshours` text AFTER `countryid`</query>
+</install>
+<install version="0.9.2150">
+<query>ALTER TABLE `dispatchmethod` ADD COLUMN `type` int(10) unsigned NOT NULL DEFAULT '1' AFTER `parentid`</query>
+<query>ALTER TABLE `dispatchmethod` ADD COLUMN `maximumweight` decimal(15,4) DEFAULT NULL AFTER `type`</query>
+<query>ALTER TABLE `dispatchmethod` ADD COLUMN `freedelivery` decimal(15,4) DEFAULT NULL AFTER `maximumweight`</query>
+</install>
+<install version="0.9.2152">
+<query>DROP TABLE eratysettings</query>
+</install>
+<install version="0.9.2153">
+<query>DROP TABLE IF EXISTS `eratysettings`</query>
+<query>
+CREATE TABLE `eratysettings` (
+  `ideratysettings` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `numersklepu` varchar(10) DEFAULT NULL,
+  `wariantsklepu` varchar(30) DEFAULT NULL,
+  `typproduktu` int(2) unsigned DEFAULT NULL,
+  `char` varchar(5) DEFAULT NULL,
+  `paymentmethodid` int(10) unsigned DEFAULT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `editid` int(10) unsigned DEFAULT NULL,
+  `editdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`ideratysettings`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</query>
+</install>
+<install version="0.9.2155">
+<query>ALTER TABLE `order` ADD COLUMN `sessionid` varchar(255) NOT NULL AFTER `rulescartid`</query>
+</install>
+<install version="0.9.2156">
+<query>DROP TABLE IF EXISTS categoryceneo</query>
+<query>DROP TABLE IF EXISTS ceneo</query>
+<query>DROP TABLE IF EXISTS integration</query>
+<query>
+CREATE TABLE `integration` (
+  `idintegration` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `symbol` varchar(32) NOT NULL,
+  `addid` int(10) unsigned NOT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `editid` int(10) unsigned DEFAULT NULL,
+  `editdate` datetime DEFAULT NULL,
+  `status` tinyint(1) unsigned DEFAULT NULL,
+  `installed` tinyint(1) unsigned DEFAULT NULL,
+  `updateurl` varchar(128) DEFAULT NULL,
+  `md5check` varchar(45) DEFAULT NULL,
+  `relationtable` varchar(45) DEFAULT NULL,
+  `datatable` varchar(45) DEFAULT NULL,
+  `storeid` int(10) unsigned DEFAULT NULL,
+  `viewid` int(10) unsigned DEFAULT NULL,
+  `parentid` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`idintegration`),
+  UNIQUE KEY `UNIQUE_integration_symbol` (`symbol`),
+  UNIQUE KEY `UNIQUE_integration_name` (`name`),
+  KEY `FK_integration_addid` (`addid`),
+  KEY `FK_integration_editid` (`editid`),
+  KEY `FK_integration_storeid` (`storeid`),
+  KEY `FK_integration_viewid` (`viewid`),
+  KEY `FK_integration_parentid` (`parentid`),
+  CONSTRAINT `FK_integration_addid` FOREIGN KEY (`addid`) REFERENCES `user` (`iduser`),
+  CONSTRAINT `FK_integration_editid` FOREIGN KEY (`editid`) REFERENCES `user` (`iduser`),
+  CONSTRAINT `FK_integration_parentid` FOREIGN KEY (`parentid`) REFERENCES `integration` (`idintegration`),
+  CONSTRAINT `FK_integration_storeid` FOREIGN KEY (`storeid`) REFERENCES `store` (`idstore`),
+  CONSTRAINT `FK_integration_viewid` FOREIGN KEY (`viewid`) REFERENCES `view` (`idview`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+</install>
+<install version="0.9.2158">
+<query>DELETE FROM subpage WHERE name = 'PayFlow'</query>
+<query>DELETE FROM subpage WHERE name = 'Delivery'</query>
+<query>DELETE FROM subpage WHERE name = 'Finalization'</query>
+<query>DELETE FROM subpage WHERE name = 'OnDelivery'</query>
+<query>DELETE FROM subpage WHERE name = 'Pickup'</query>
+<query>DELETE FROM subpage WHERE name = 'BankTransfer'</query>
+<query>DELETE FROM subpage WHERE name = 'Eraty'</query>
+<query>DELETE FROM subpage WHERE name = 'Wordpress'</query>
+</install>
+<install version="0.9.2159">
+<query>ALTER TABLE `staticcontenttranslation` MODIFY COLUMN `content` longtext NOT NULL</query>
+</install>
+<install version="0.9.2160">
+<query>ALTER TABLE `newstranslation` MODIFY COLUMN `topic` varchar(255) NOT NULL</query>
+<query>ALTER TABLE `newstranslation` MODIFY COLUMN `content` text NOT NULL</query>
+<query>ALTER TABLE `newstranslation` ADD COLUMN `seo` varchar(255) DEFAULT NULL AFTER `languageid`</query>
+</install>
+<install version="0.9.3">
+<query>ALTER TABLE `view` MODIFY COLUMN `photoid` VARCHAR(255) DEFAULT NULL</query>
+<query>UPDATE `view` SET photoid = 'logo.png'</query>
+</install>
+<install version="1.0">
+<query>DROP TABLE clientgrouppromotion</query>
+<query>ALTER TABLE `contentcategorytranslation` DROP INDEX `UNIQUE_contentcategory_name_languageid`</query>
+<query>ALTER TABLE `newstranslation` MODIFY COLUMN `content` text NOT NULL</query>
+<query>ALTER TABLE `newstranslation` ADD COLUMN `seo` varchar(255) DEFAULT NULL AFTER `languageid`</query>
+<query>ALTER TABLE `newstranslation` ADD COLUMN `keyword` varchar(255) DEFAULT NULL AFTER `seo`</query>
+<query>ALTER TABLE `newstranslation` ADD COLUMN `keyword_description` varchar(1000) DEFAULT NULL AFTER `keyword`</query>
+<query>ALTER TABLE `producttranslation` MODIFY COLUMN `shortdescription` text</query>
+<query>ALTER TABLE `view` MODIFY COLUMN `photoid` varchar(255) DEFAULT NULL</query>
+<query>ALTER TABLE `viewtranslation` ADD COLUMN `keyword` varchar(255) DEFAULT NULL AFTER `conditions`</query>
+<query>ALTER TABLE `viewtranslation` ADD COLUMN `keyword_description` varchar(1000) DEFAULT NULL AFTER `keyword`</query>
+</install>
+<install version="1.0.1">
+<query>ALTER TABLE `view` ADD COLUMN `minimumordervalue` DECIMAL(10,4) NOT NULL DEFAULT 0.0000 AFTER `trackstock`</query>
+</install>
+<install version="1.0.4">
+<query>ALTER TABLE `updatehistory` DROP INDEX `UNIQUE_packagename_version_channel`</query>
+</install>
+<install version="1.0.5">
+<query>CREATE TABLE `newsphoto` (
+  `idnewsphoto` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `newsid` int(10) unsigned NOT NULL,
+  `photoid` int(10) unsigned DEFAULT NULL,
+  `addid` int(10) unsigned NOT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `editid` int(10) unsigned DEFAULT NULL,
+  `editdate` datetime DEFAULT NULL,
+  `mainphoto` int(10) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idnewsphoto`),
+  UNIQUE KEY `UNIQUE_newsphoto_newsid_photoid` (`newsid`,`photoid`),
+  KEY `FK_newsphoto_photoid` (`photoid`),
+  KEY `FK_newsphoto_addid` (`addid`),
+  KEY `FK_newsphoto_editid` (`editid`),
+  CONSTRAINT `FK_newsphoto_addid` FOREIGN KEY (`addid`) REFERENCES `user` (`iduser`),
+  CONSTRAINT `FK_newsphoto_editid` FOREIGN KEY (`editid`) REFERENCES `user` (`iduser`),
+  CONSTRAINT `FK_newsphoto_photoid` FOREIGN KEY (`photoid`) REFERENCES `file` (`idfile`),
+  CONSTRAINT `FK_newsphoto_newsid` FOREIGN KEY (`newsid`) REFERENCES `news` (`idnews`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8</query>
+</install>
+<install version="1.0.6">
+<query>ALTER TABLE `product` ADD COLUMN `trackstock` INTEGER UNSIGNED AFTER `technicaldatasetid`</query>
+<query>ALTER TABLE `order` MODIFY COLUMN `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP</query>
+</install>
+<install version="1.0.8">
+<query>ALTER TABLE `producttranslation` ADD COLUMN `longdescription` TEXT DEFAULT NULL AFTER `keyword_description`</query>
+<query>ALTER TABLE `viewtranslation` MODIFY COLUMN `privacy` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, MODIFY COLUMN `conditions` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL</query>
+<query>ALTER TABLE `view` ADD COLUMN `showtax` INTEGER UNSIGNED DEFAULT 1 AFTER `minimumordervalue`</query>
+</install>
+<install version="1.1.2">
+<query>ALTER TABLE `view` ADD COLUMN `enableopinions` INTEGER UNSIGNED DEFAULT 1 AFTER `showtax`</query>
+<query>ALTER TABLE `view` ADD COLUMN `enabletags` INTEGER UNSIGNED DEFAULT 1 AFTER `enableopinions`</query>
+<query>ALTER TABLE `staticcontent` ADD COLUMN `hierarchy` INTEGER UNSIGNED DEFAULT 0 AFTER `publish`</query>
+<query>ALTER TABLE `contentcategory` ADD COLUMN `hierarchy` INTEGER UNSIGNED DEFAULT 0 AFTER `parentid`</query>
+</install>
+<install version="1.1.3">
+<query>DELETE FROM `right` WHERE controllerid IN (7,8,41,52,68,75,78,79,80,84,85,87,95,96,97,98,99,100,101,102,114,857,863,864,867,868,869,883)</query>
+<query>DELETE FROM `controller` WHERE idcontroller IN (7,8,41,52,68,75,78,79,80,84,85,87,95,96,97,98,99,100,101,102,114,857,863,864,867,868,869,883)</query>
+<query>DELETE FROM layoutboxcontenttypevalue WHERE layoutboxcontenttypeid IN (40,43,44,48,57,60)</query>
+<query>DELETE FROM layoutboxcontenttype WHERE idlayoutboxcontenttype IN (40,43,44,48,57,58,60)</query>
+<query>INSERT INTO layoutboxcontenttype SET name = 'TXT_SLIDESHOW_BOX', controller = 'SlideShowBox'</query>
+<query>DELETE FROM transmailactiontag WHERE transmailtagsid IN (100,101,103,104)</query>
+<query>DELETE FROM transmailtags WHERE idtransmailtags IN (100,101,103,104)</query>
+<query>ALTER TABLE contentcategory ADD COLUMN `footer` INTEGER UNSIGNED NOT NULL DEFAULT 1 AFTER `hierarchy`, ADD COLUMN `header` INTEGER UNSIGNED NOT NULL DEFAULT 1 AFTER `footer`</query>
+<query>ALTER TABLE paypalsettings ADD COLUMN `positiveorderstatusid` INTEGER UNSIGNED NOT NULL AFTER `sandbox`, ADD COLUMN `negativeorderstatusid` INTEGER UNSIGNED NOT NULL AFTER `positiveorderstatusid`</query>
+<query>ALTER TABLE paypalsettings ADD COLUMN `viewid` INTEGER UNSIGNED DEFAULT NULL AFTER `negativeorderstatusid`</query>
+</install>
+<install version="1.1.5">
+<query>ALTER TABLE `product` DROP COLUMN `fileid`, DROP COLUMN `movieid`, DROP COLUMN `viewid`, DROP INDEX `FK_product_fileid`, DROP INDEX `FK_product_movieid`, DROP INDEX `FK_product_viewid`, DROP FOREIGN KEY `FK_product_fileid`, DROP FOREIGN KEY `FK_product_movieid`, DROP FOREIGN KEY `FK_product_viewid`</query>
+<query>DROP TABLE spy</query>
+<query>DROP TABLE schemejsvariableoption</query>
+<query>DROP TABLE schemejsvariable</query>
+<query>DROP TABLE productpromotion</query>
+<query>DROP TABLE ordervirtualproduct</query>
+<query>DROP TABLE place</query>
+<query>DROP TABLE commune</query>
+<query>DROP TABLE district</query>
+<query>DROP TABLE province</query>
+<query>DROP TABLE combinationview</query>
+<query>DROP TABLE combinationtranslation</query>
+<query>DROP TABLE productcombinationview</query>
+<query>DROP TABLE productcombination</query>
+<query>DROP TABLE combination</query>
+<query>DROP TABLE columnrefererfeelement</query>
+<query>DROP TABLE columnreferer</query>
+<query>DROP TABLE countrycurrency</query>
+<query>DROP TABLE mostsearchview</query>
+<query>DROP TABLE schemecontroller</query>
+<query>DROP TABLE clientgroupdispachmethod</query>
+<query>DROP TABLE clientgrouppaymentmethod</query>
+<query>ALTER TABLE `globalsettings` DROP COLUMN `dateformatid`, DROP INDEX `FK_globalsettings_dateformatid`, DROP FOREIGN KEY `FK_globalsettings_dateformatid`</query>
+<query>ALTER TABLE `store` DROP COLUMN `dateformatid`, DROP INDEX `FK_store_dateformatid`, DROP FOREIGN KEY `FK_store_dateformatid`</query>
+<query>DROP TABLE dateformat</query>
+<query>DROP TABLE exchangeseparator</query>
+<query>DROP TABLE globalsettings</query>
+<query>DROP TABLE ordertransaction</query>
+<query>DROP TABLE productstatustype</query>
+<query>DROP TABLE recommendreferral</query>
+<query>ALTER TABLE `suffixtype` DROP COLUMN `promotion`</query>
+<query>ALTER TABLE `translation` DROP COLUMN `controllerid`, DROP INDEX `UNIQUE_name_translation_controllerid_languageid`, DROP INDEX `FK_translation_controllerid`, DROP FOREIGN KEY `FK_translation_controllerid`</query>
+<query>ALTER TABLE `transmailfooter` DROP COLUMN `parentid`</query>
+<query>ALTER TABLE `transmailheader` DROP COLUMN `parentid`</query>
+<query>ALTER TABLE `userhistorylog` DROP COLUMN `storeid`, DROP INDEX `FK_userhistorylog_storeid`, DROP FOREIGN KEY `FK_userhistorylog_storeid`</query>
+<query>ALTER TABLE `answervolunteered` DROP COLUMN `storeid`, DROP COLUMN `parentid`, DROP INDEX `FK_answervolunteered_storeid`, DROP INDEX `FK_answervolunteered_parentid`, DROP FOREIGN KEY `FK_answervolunteered_parentid`, DROP FOREIGN KEY `FK_answervolunteered_storeid`</query>
+<query>ALTER TABLE `attributegroup` DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_attributegroup_viewid`, DROP INDEX `FK_attributegroup_storeid`, DROP INDEX `FK_attributegroup_parentid`, DROP FOREIGN KEY `FK_attributegroup_parentid`, DROP FOREIGN KEY `FK_attributegroup_storeid`, DROP FOREIGN KEY `FK_attributegroup_viewid`</query>
+<query>ALTER TABLE `attributegroupname` DROP COLUMN `parentid`, DROP INDEX `FK_attributegroupname_parentid`, DROP FOREIGN KEY `FK_attributegroupname_parentid`</query>
+<query>ALTER TABLE `category` DROP COLUMN `parentid`, DROP COLUMN `suffixtypeid`, DROP INDEX `FK_category_suffixtypeid`, DROP INDEX `FK_category_parentid`, DROP FOREIGN KEY `FK_category_parentid`, DROP FOREIGN KEY `FK_category_suffixtypeid`</query>
+<query>ALTER TABLE `categoryattributeproduct` DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_categoryattributeproduct_viewid`, DROP INDEX `FK_categoryattributeproduct_storeid`, DROP INDEX `FK_categoryattributeproduct_parentid`, DROP FOREIGN KEY `FK_categoryattributeproduct_parentid`, DROP FOREIGN KEY `FK_categoryattributeproduct_storeid`, DROP FOREIGN KEY `FK_categoryattributeproduct_viewid`</query>
+<query>ALTER TABLE `client` DROP COLUMN `PIN`</query>
+<query>ALTER TABLE `clientaddress` DROP COLUMN `placeid`</query>
+<query>ALTER TABLE `contentcategory` DROP COLUMN `parentid`, DROP INDEX `FK_contentcategory_parentid`, DROP FOREIGN KEY `FK_contentcategory_parentid`</query>
+<query>ALTER TABLE `crosssellview` DROP COLUMN `addid`, DROP COLUMN `adddate`, DROP INDEX `FK_crosssellview_addid`, DROP FOREIGN KEY `FK_crosssellview_addid`</query>
+<query>ALTER TABLE `currency` DROP COLUMN `lettersigndecimal`, DROP COLUMN `lettersignhex`</query>
+<query>ALTER TABLE `orderclientdata` DROP COLUMN `REGON`, DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_orderclientdata_viewid`, DROP INDEX `FK_orderclientdata_storeid`, DROP INDEX `FK_orderclientdata_parentid`, DROP FOREIGN KEY `FK_orderclientdata_parentid`, DROP FOREIGN KEY `FK_orderclientdata_storeid`, DROP FOREIGN KEY `FK_orderclientdata_viewid`</query>
+<query>ALTER TABLE `orderclientdeliverydata` DROP COLUMN `REGON`, DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_orderclientdeliverydata_storeid`, DROP INDEX `FK_orderclientdeliverydata_viewid`, DROP INDEX `FK_orderclientdeliverydata_parentid`, DROP FOREIGN KEY `FK_orderclientdeliverydata_parentid`, DROP FOREIGN KEY `FK_orderclientdeliverydata_storeid`, DROP FOREIGN KEY `FK_orderclientdeliverydata_viewid`</query>
+<query>ALTER TABLE `orderstatusorderstatusgroups` DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_orderstatusorderstatusgroups_storeid`, DROP INDEX `FK_orderstatusorderstatusgroups_viewid`, DROP INDEX `FK_orderstatusorderstatusgroups_parentid`, DROP FOREIGN KEY `FK_orderstatusorderstatusgroups_parentid`, DROP FOREIGN KEY `FK_orderstatusorderstatusgroups_storeid`, DROP FOREIGN KEY `FK_orderstatusorderstatusgroups_viewid`</query>
+<query>ALTER TABLE `orderstatusgroups` DROP COLUMN `parentid`, DROP INDEX `FK_orderstatusgroups_parentid`, DROP FOREIGN KEY `FK_orderstatusgroups_parentid`</query>
+<query>ALTER TABLE `orderstatusgroupstranslation` DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_orderstatusgroupstranslation_storeid`, DROP INDEX `FK_orderstatusgroupstranslation_viewid`, DROP INDEX `FK_orderstatusgroupstranslation_parentid`, DROP FOREIGN KEY `FK_orderstatusgroupstranslation_parentid`, DROP FOREIGN KEY `FK_orderstatusgroupstranslation_storeid`, DROP FOREIGN KEY `FK_orderstatusgroupstranslation_viewid`</query>
+<query>ALTER TABLE `pagescheme` DROP COLUMN `boxtitle`, DROP COLUMN `boxcontent`, DROP COLUMN `parentid`, DROP INDEX `FK_pagescheme_parentid`, DROP FOREIGN KEY `FK_pagescheme_parentid`</query>
+<query>ALTER TABLE `paymentmethod` DROP COLUMN `parentid`, DROP COLUMN `viewid`, DROP INDEX `FK_paymentmethod_parentid`, DROP INDEX `FK_paymentmethod_viewid`, DROP FOREIGN KEY `FK_paymentmethod_parentid`, DROP FOREIGN KEY `FK_paymentmethod_viewid`</query>
+<query>ALTER TABLE `producer` DROP COLUMN `parentid`, DROP INDEX `FK_producer_parentid`, DROP FOREIGN KEY `FK_producer_parentid`</query>
+<query>ALTER TABLE `similarproduct` DROP COLUMN `parentid`, DROP INDEX `FK_similarproduct_parentid`, DROP FOREIGN KEY `FK_similarproduct_parentid`</query>
+<query>ALTER TABLE `store` DROP COLUMN `regon`</query>
+<query>ALTER TABLE `clientdata` DROP COLUMN `sex`</query>
+<query>ALTER TABLE `similarproduct` DROP COLUMN `productattributesetid`, DROP INDEX `UNIQUE_similarproduct_productid_relatedproductid_attribute`, DROP INDEX `FK_similarproduct_productattributesetid`, ADD UNIQUE INDEX `UNIQUE_similarproduct_productid_relatedproductid` USING BTREE(`productid`, `relatedproductid`), DROP FOREIGN KEY `FK_similarproduct_productattributesetid`</query>
+<query>ALTER TABLE `upsell` DROP COLUMN `productattributesetid`, DROP COLUMN `parentid`, DROP INDEX `UNIQUE_crosssell_productid_relatedproductid_attribute`, DROP INDEX `FK_productattributesetid`, DROP INDEX `FK_upsell_parentid`, ADD UNIQUE INDEX `UNIQUE_upsell_productid_relatedproductid` USING BTREE(`productid`, `relatedproductid`), DROP FOREIGN KEY `FK_productattributesetid`, DROP FOREIGN KEY `FK_upsell_parentid`</query>
+</install>
+<install version="1.1.6">
+<query>ALTER TABLE `clientdata` DROP COLUMN `nick`</query>
+<query>ALTER TABLE `clientaddress` DROP COLUMN `clientaddresstypeid`, DROP INDEX `UNIQUE_clientaddress_clientid_clientaddresstypeid`, ADD INDEX `UNIQUE_clientaddress_clientid_clientaddresstypeid` USING BTREE(`clientid`, `main`), DROP FOREIGN KEY `FK_clientaddress_clientaddresstypeid`</query>
+<query>DROP TABLE `clientaddresstype`</query>
+<query>ALTER TABLE `clientaddress` DROP INDEX `UNIQUE_clientaddress_clientid_clientaddresstypeid`, ADD UNIQUE INDEX `UNIQUE_clientaddress_clientid_clientaddresstypeid` USING BTREE(`clientid`, `main`)</query>
+<query>ALTER TABLE `clientaddress` DROP COLUMN `vatid`, DROP INDEX `FK_clientaddress_vatid`, DROP FOREIGN KEY `FK_clientaddress_vatid`</query>
+<query>ALTER TABLE `orderproduct` DROP COLUMN `storeid`, DROP COLUMN `viewid`, DROP COLUMN `parentid`, DROP INDEX `FK_orderproduct_storeid`, DROP INDEX `FK_orderproduct_viewid`, DROP INDEX `FK_orderproduct_parentid`, DROP FOREIGN KEY `FK_orderproduct_parentid`, DROP FOREIGN KEY `FK_orderproduct_storeid`, DROP FOREIGN KEY `FK_orderproduct_viewid`</query>
+<query>ALTER TABLE `view` ADD COLUMN `catalogmode` INTEGER UNSIGNED DEFAULT 0 AFTER `enabletags`</query>
+<query>ALTER TABLE `view` ADD COLUMN `forcelogin` INTEGER UNSIGNED DEFAULT 0 AFTER `catalogmode`</query>
+</install>
+<install version="1.1.7">
+<query>ALTER TABLE `productattributeset` ADD COLUMN `attributeprice` DECIMAL(15,4) NULL  AFTER `attributegroupnameid`</query>
+<query>ALTER TABLE `paymentmethod` DROP INDEX `UNIQUE_paymentmethod_controller`</query>
+<query>ALTER TABLE `view` ADD COLUMN `enablerss` INT(10) NULL DEFAULT 1  AFTER `forcelogin`</query>
+</install>
+<install version="1.1.8">
+<query>
+CREATE TABLE `orderfiles` (
+  `idorderfiles` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `orderid` int(10) unsigned NOT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `path` varchar(255) NOT NULL,
+  PRIMARY KEY (`idorderfiles`),
+  KEY `FK_orderfiles_orderid` (`orderid`),
+  CONSTRAINT `FK_orderfiles_orderid` FOREIGN KEY (`orderid`) REFERENCES `order` (`idorder`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</query>
+<query>ALTER TABLE `view` ADD COLUMN `uploaderenabled` INT UNSIGNED NULL DEFAULT 0  AFTER `enablerss` , ADD COLUMN `uploadmaxfilesize` DECIMAL(15,0) NULL DEFAULT '10'  AFTER `uploaderenabled` , ADD COLUMN `uploadchunksize` DECIMAL(15,0) NULL DEFAULT 100  AFTER `uploadmaxfilesize` , ADD COLUMN `uploadextensions` TEXT NULL  AFTER `uploadchunksize`</query>
+</install>
+<install version="1.1.9">
+<query>ALTER TABLE `productattributeset` ADD COLUMN `symbol` VARCHAR(128) NULL DEFAULT NULL  AFTER `attributeprice`</query>
+<query>ALTER TABLE `view` ADD COLUMN `invoicenumerationkind` VARCHAR(4) NOT NULL DEFAULT 'ntmr'  AFTER `enablerss`</query>
+<query>ALTER TABLE `orderstatusgroups` DROP FOREIGN KEY `FK_orderstatusgroups_invoicetypeid`</query>
+<query>ALTER TABLE `orderstatusgroups` DROP COLUMN `invoicetypeid`, DROP INDEX `FK_orderstatusgroups_invoicetypeid`</query>
+<query>DROP TABLE `invoicetype`</query>
+<query>ALTER TABLE `view` ADD COLUMN `invoicedefaultpaymentdue` INT NOT NULL DEFAULT 7  AFTER `invoicenumerationkind`</query>
+<query>DROP TABLE `invoice`</query>
+<query>
+CREATE TABLE `invoice` (
+  `idinvoice` int(11) NOT NULL AUTO_INCREMENT,
+  `symbol` varchar(128) NOT NULL,
+  `invoicedate` date NOT NULL,
+  `salesdate` date NOT NULL,
+  `paymentduedate` date NOT NULL,
+  `salesperson` varchar(128) NOT NULL,
+  `invoicetype` int(11) NOT NULL,
+  `comment` text,
+  `contentoriginal` longblob NOT NULL,
+  `contentcopy` longblob NOT NULL,
+  `orderid` int(11) NOT NULL,
+  `totalpayed` decimal(15,2) NOT NULL DEFAULT '0.00',
+  `viewid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idinvoice`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>ALTER TABLE `dispatchmethodweight` ADD COLUMN `vat` INT UNSIGNED NULL DEFAULT NULL  AFTER `editdata`</query>
+<query>ALTER TABLE `product` DROP COLUMN `description` , DROP COLUMN `shortdescription`</query>
+<query>DROP TABLE `exchangeentityfield`</query>
+<query>DROP TABLE `exchangeentitytype`</query>
+<query>ALTER TABLE `categorytranslation` CHANGE COLUMN `description` `shortdescription` VARCHAR(3000) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `categorytranslation` ADD COLUMN `description` VARCHAR(3000) NULL DEFAULT NULL  AFTER `shortdescription`</query>
+<query>UPDATE `categorytranslation` SET description = shortdescription</query>
+<query>ALTER TABLE `category` ADD COLUMN `enable` INT UNSIGNED NOT NULL DEFAULT 1  AFTER `editdate`</query>
+<query>ALTER TABLE `product` ADD COLUMN `enable` INT UNSIGNED NOT NULL DEFAULT 1  AFTER `trackstock`</query>
+</install>
+<install version="1.2.0">
+<query>
+CREATE TABLE `globalsettings` (
+  `idglobalsettings` int(11) NOT NULL AUTO_INCREMENT,
+  `param` varchar(45) DEFAULT NULL,
+  `value` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idglobalsettings`),
+  UNIQUE KEY `UNIQUE_globalsettings_param_type` (`param`,`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</query>
+<query>ALTER TABLE `productattributeset` ADD COLUMN `symbol` VARCHAR(128) NULL DEFAULT NULL  AFTER `attributeprice`</query>
+<query>INSERT INTO globalsettings SET param = 'datagrid_rows_per_page', value = '50', type = 'interface'</query>
+<query>INSERT INTO globalsettings SET param = 'datagrid_show_context_menu', value = '0', type = 'interface'</query>
+<query>INSERT INTO globalsettings SET param = 'datagrid_click_row_action', value = 'edit', type = 'interface'</query>
+<query>
+CREATE TABLE `event` (
+  `idevent` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `model` varchar(45) NOT NULL,
+  `method` varchar(45) NOT NULL,
+  `module` varchar(64) NOT NULL,
+  PRIMARY KEY (`idevent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</query>
+<query>INSERT INTO event SET name = 'admin.product.add', model = 'productsearch', method = 'addProductToSearch', module = 'Gekosale'</query>
+<query>INSERT INTO event SET name = 'admin.product.edit', model = 'productsearch', method = 'addProductToSearch', module = 'Gekosale'</query>
+<query>ALTER TABLE `layoutbox` ADD COLUMN `controller` VARCHAR(128) NULL  AFTER `content`</query>
+<query>UPDATE layoutbox SET controller = (SELECT LBCT.controller FROM layoutboxcontenttype LBCT LEFT JOIN layoutboxcontenttypevalue LBCTV ON LBCT.idlayoutboxcontenttype = LBCTV.layoutboxcontenttypeid WHERE LBCTV.layoutboxid = layoutbox.idlayoutbox)</query>
+<query>DROP TABLE `layoutboxcontenttypevalue`</query>
+<query>DROP TABLE `layoutboxcontenttype`</query>
+<query>DROP TABLE `layoutboxcontenttype`</query>
+<query>INSERT INTO controller SET name = 'producerlist', version = 1, description = 'TXT_CONTROLLER_PRODUCERLIST', enable = 1, addid = 1, mode = 0</query>
+<query>INSERT INTO subpage SET name = 'Producerlist', description = 'Lista produktów producenta', translation = 'TXT_PRODUCER_LIST'</query>
+<query>INSERT INTO `subpagelayout` SET subpageid = (SELECT idsubpage FROM subpage WHERE name = 'Producerlist'), viewid = NULL</query>
+<query>ALTER TABLE `producertranslation` ADD COLUMN `seo` VARCHAR(255) NULL  AFTER `www`</query>
+<query>INSERT INTO controllerseo SET name = 'producent', languageid = 1, addid = 1, controllerid = (SELECT idcontroller FROM controller WHERE name = 'producerlist')</query>
+<query>ALTER TABLE `producertranslation` DROP COLUMN `www`</query>
+<query>ALTER TABLE `currency` ADD COLUMN `decimalseparator` VARCHAR(10) NULL  AFTER `currencysymbol` , ADD COLUMN `thousandseparator` VARCHAR(10) NULL  AFTER `decimalseparator` , ADD COLUMN `positivepreffix` VARCHAR(10) NULL  AFTER `thousandseparator` , ADD COLUMN `positivesuffix` VARCHAR(10) NULL  AFTER `positivepreffix` , ADD COLUMN `negativepreffix` VARCHAR(10) NULL  AFTER `positivesuffix` , ADD COLUMN `negativesuffix` VARCHAR(10) NULL  AFTER `negativepreffix` , ADD COLUMN `decimalcount` INT NULL  AFTER `negativesuffix`</query>
+<query>UPDATE currency SET positivesuffix = currencysymbol, negativepreffix = '-', negativesuffix = currencysymbol, decimalcount = 2,decimalseparator = '.'</query>
+<query>ALTER TABLE `file` DROP COLUMN `parentid` , DROP COLUMN `storeid`</query>
+<query>ALTER TABLE `view` ADD COLUMN `favicon` VARCHAR(255) NULL DEFAULT NULL  AFTER `photoid`</query>
+<query>ALTER TABLE `missingcart` DROP FOREIGN KEY `FK_missingcart_storeid` , DROP FOREIGN KEY `FK_missingcart_parentid`</query>
+<query>ALTER TABLE `missingcart` DROP COLUMN `parentid` , DROP COLUMN `storeid`, DROP INDEX `FK_missingcart_parentid`, DROP INDEX `FK_missingcart_storeid`</query>
+<query>CREATE TABLE `productgroupprice` (
+  `idproductgroupprice` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `clientgroupid` int(10) unsigned NOT NULL,
+  `productid` int(10) unsigned NOT NULL,
+  `groupprice` int(10) unsigned DEFAULT '0',
+  `sellprice` decimal(15,4) NOT NULL,
+  `promotion` int(10) unsigned DEFAULT '0',
+  `discountprice` decimal(15,4) DEFAULT NULL,
+  `promotionstart` date DEFAULT NULL,
+  `promotionend` date DEFAULT NULL,
+  PRIMARY KEY (`idproductgroupprice`),
+  UNIQUE KEY `UNIQUE_productgroupprice_productid_clientgroupid` (`clientgroupid`,`productid`),
+  KEY `FK_productgroupprice_productid` (`productid`),
+  KEY `FK_productgroupprice_clientgroupid` (`clientgroupid`),
+  CONSTRAINT `FK_productgroupprice_clientgroupid` FOREIGN KEY (`clientgroupid`) REFERENCES `clientgroup` (`idclientgroup`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_productgroupprice_productid` FOREIGN KEY (`productid`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8</query>
+<query>ALTER TABLE `product` ADD COLUMN `promotion` INT UNSIGNED NULL DEFAULT 0  AFTER `enable` , ADD COLUMN `discountprice` DECIMAL(15,4) NULL DEFAULT 0.0000  AFTER `promotion` , ADD COLUMN `promotionstart` DATE NULL  AFTER `discountprice` , ADD COLUMN `promotionend` DATE NULL  AFTER `promotionstart`</query>
+<query>ALTER TABLE `productattributeset` ADD COLUMN `discountprice` DECIMAL(15,4) NULL DEFAULT NULL  AFTER `attributeprice`</query>
+<query>DROP VIEW `rulecatalogview`</query>
+<query>DROP VIEW `rulecatalogviewall`</query>
+<query>DROP VIEW `attributeprice`</query>
+<query>DROP TABLE `rulescatalogview`</query>
+<query>DROP TABLE `rulescatalogrule`</query>
+<query>DROP TABLE `rulescatalogproduct`</query>
+<query>DROP TABLE `rulescatalogclientgroup`</query>
+<query>DROP TABLE `rulescatalog`</query>
+<query>ALTER TABLE `producertranslation` ADD COLUMN `description` TEXT NULL  AFTER `seo`</query>
+<query>ALTER TABLE `sessionhandler` ADD COLUMN `ismobile` INT NULL DEFAULT 0  AFTER `viewid` , ADD COLUMN `isbot` INT NULL DEFAULT 0  AFTER `ismobile` , ADD COLUMN `ipaddress` CHAR(15) NULL DEFAULT '000.000.000.000'  AFTER `isbot` , ADD COLUMN `globalprice` DECIMAL(15,2) NULL DEFAULT 0.00  AFTER `ipaddress` , ADD COLUMN `cartcurrency` CHAR(3) NULL  AFTER `globalprice` , ADD COLUMN `browser` VARCHAR(64) NULL  AFTER `cartcurrency` , ADD COLUMN `platform` VARCHAR(45) NULL  AFTER `browser`</query>
+<query>ALTER TABLE `product` ADD COLUMN `viewed` INT NULL DEFAULT 0  AFTER `promotionend`</query>
+<query>ALTER TABLE `sessionhandler` ADD COLUMN `url` VARCHAR(255) NULL  AFTER `platform`</query>
+<query>ALTER TABLE `currencyrates` ADD INDEX `IDX_currencyrates_currencyto` (`currencyto` ASC)</query>
+<query>ALTER TABLE `productnew` DROP FOREIGN KEY `FK_productnew_viewid` , DROP FOREIGN KEY `FK_productnew_parentid`</query>
+<query>ALTER TABLE `productnew` DROP COLUMN `parentid` , DROP COLUMN `viewid`, DROP INDEX `FK_productnew_parentid`, DROP INDEX `FK_productnew_viewid`</query>
+<query>ALTER TABLE `product` ADD INDEX `IDX_product_enable` (`enable` ASC)</query>
+<query>ALTER TABLE `view` DROP COLUMN `trackstock`</query>
+<query>ALTER TABLE `productattributeset` ADD COLUMN `weight` DECIMAL(15,4) NULL DEFAULT 0  AFTER `symbol`</query>
+<query>ALTER TABLE `view` ADD COLUMN `apikey` VARCHAR(45) NULL  AFTER `uploadextensions`</query>
+</install>
+<install version="1.2.1">
+<query>TRUNCATE event</query>
+<query>INSERT INTO event SET name = 'admin.product.add', model = 'productsearch', method = 'addProductToSearch', module = 'Gekosale'</query>
+<query>INSERT INTO event SET name = 'admin.product.edit', model = 'productsearch', method = 'updateProductSearch', module = 'Gekosale'</query>
+</install>
+<install version="1.2.3">
+<query>ALTER TABLE `sessionhandler` ADD COLUMN `cart` LONGTEXT NULL DEFAULT NULL  AFTER `url`</query>
+<query>ALTER TABLE `missingcart` DROP COLUMN `paymentmethodid` , DROP COLUMN `dispatchmethodid`</query>
+</install>
+<install version="1.2.4">
+<query>ALTER TABLE `invoice` ADD COLUMN `externalid` INT NULL DEFAULT NULL  AFTER `viewid` , ADD COLUMN `contenttype` VARCHAR(5) NULL DEFAULT 'html'  AFTER `externalid`</query>
+<query>ALTER TABLE `transmailaction` DROP COLUMN `defaultcontent`</query>
+<query>
+CREATE TABLE `modulesettings` (
+  `idmodulesettings` int(11) NOT NULL AUTO_INCREMENT,
+  `param` varchar(45) DEFAULT NULL,
+  `value` varchar(45) DEFAULT NULL,
+  `viewid` int(11) DEFAULT NULL,
+  `module` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idmodulesettings`),
+  UNIQUE KEY `UNIQUE_modulesettings_param_module_viewid` (`param`,`module`,`viewid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</query>
+<query>
+CREATE TABLE `urlmap` (
+  `idurlmap` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) DEFAULT NULL,
+  `controller` varchar(255) DEFAULT NULL,
+  `params` varchar(255) DEFAULT NULL,
+  `pkid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idurlmap`),
+  UNIQUE KEY `UNIQUE_urlmap_url` (`url`)
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8
+</query>
+</install>
+<install version="1.2.5">
+<query>ALTER TABLE `category` ADD COLUMN `migrationid` INT NULL DEFAULT NULL  AFTER `enable` , ADD COLUMN `migrationparentid` INT NULL DEFAULT NULL  AFTER `migrationid`</query>
+<query>ALTER TABLE `producer` ADD COLUMN `migrationid` INT NULL DEFAULT NULL  AFTER `photoid`</query>
+<query>ALTER TABLE `product` ADD COLUMN `migrationid` INT NULL DEFAULT NULL  AFTER `viewed`</query>
+<query>INSERT INTO controller SET name = 'migration', version = 1, description = 'Migracja z innych systemów', enable = 1, addid = 1, mode = 1</query>
+<query>INSERT INTO `right` SET controllerid = (SELECT idcontroller FROM controller WHERE name = 'migration'), groupid = 1, permission = 127, addid = 1</query>
+<query>ALTER TABLE `gallerysettings` DROP INDEX `UNIQUE_gallerysettings_width_height`</query>
+</install>
+<install version="1.2.7">
+<query>ALTER TABLE `orderstatustranslation` ADD COLUMN `comment` TEXT NULL  AFTER `languageid`</query>
+<query>ALTER TABLE `order` DROP FOREIGN KEY `FK_order_storeid` , DROP FOREIGN KEY `FK_order_parentid`</query>
+<query>ALTER TABLE `order` DROP COLUMN `parentid` , DROP COLUMN `storeid`, DROP INDEX `FK_order_parentid`, DROP INDEX `FK_order_storeid`</query>
+<query>ALTER TABLE `orderproductattribute` ADD COLUMN `group` VARCHAR(255) NULL  AFTER `name`</query>
+<query>ALTER TABLE `product` ADD COLUMN `width` DECIMAL(15,4) NULL DEFAULT NULL  AFTER `migrationid` , ADD COLUMN `height` DECIMAL(15,4) NULL DEFAULT NULL  AFTER `width` , ADD COLUMN `deepth` DECIMAL(15,4) NULL DEFAULT NULL  AFTER `height`</query>
+</install>
+<install version="1.3.0">
+<query>ALTER TABLE `viewtranslation` ADD COLUMN `keyword_title` VARCHAR(255) NULL  AFTER `conditions`</query>
+<query>INSERT INTO globalsettings SET param = 'wysiwyg', value = 'tiny', type='interface'</query>
+<query>ALTER TABLE `contentcategorytranslation` ADD COLUMN `keyword_title` VARCHAR(255) NULL DEFAULT NULL  AFTER `contentcategoryid` , ADD COLUMN `keyword` VARCHAR(255) NULL DEFAULT NULL  AFTER `keyword_title` , ADD COLUMN `keyword_description` VARCHAR(1000) NULL DEFAULT NULL  AFTER `keyword`</query>
+<query>ALTER TABLE `client` ADD COLUMN `facebookid` INT NULL DEFAULT NULL  AFTER `viewid`</query>
+<query>ALTER TABLE `view` ADD COLUMN `faceboookappid` INT NULL DEFAULT NULL  AFTER `apikey` , ADD COLUMN `faceboooksecret` VARCHAR(255) NULL DEFAULT NULL  AFTER `faceboookappid`</query>
+<query>ALTER TABLE `view` CHANGE COLUMN `faceboookappid` `faceboookappid` VARCHAR(255) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `client` CHANGE COLUMN `facebookid` `facebookid` VARCHAR(255) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `platnoscisettings` ADD COLUMN `viewid` INT NULL DEFAULT NULL  AFTER `authkey`</query>
+<query>ALTER TABLE `product` ADD COLUMN `unit` INT NOT NULL DEFAULT 1  AFTER `deepth`</query>
+<query>DROP TABLE `unitmeasuretranslation`</query>
+<query>DROP TABLE `unitmeasure`</query>
+<query>ALTER TABLE `orderproduct` CHANGE COLUMN `qty` `qty` DECIMAL(16,4) UNSIGNED NOT NULL</query>
+</install>
+<install version="1.3.1">
+<query>ALTER TABLE `newstranslation` ADD COLUMN `keyword_title` VARCHAR(255) NULL DEFAULT NULL  AFTER `seo`</query>
+<query>ALTER TABLE `producertranslation` ADD COLUMN `keyword_title` VARCHAR(255) NULL DEFAULT NULL  AFTER `description` , ADD COLUMN `keyword` VARCHAR(255) NULL DEFAULT NULL  AFTER `keyword_title` , ADD COLUMN `keyword_description` VARCHAR(255) NULL DEFAULT NULL  AFTER `keyword`</query>
+<query>ALTER TABLE `newstranslation` ADD COLUMN `summary` TEXT NULL  AFTER `topic`</query>
+<query>ALTER TABLE `order` ADD COLUMN `couponcode` VARCHAR(45) NULL DEFAULT NULL  AFTER `sessionid` , ADD COLUMN `coupondiscount` DECIMAL(10,4) NULL  AFTER `couponcode`</query>
+<query>ALTER TABLE `order` ADD COLUMN `couponfreedelivery` INT(10) NULL  AFTER `coupondiscount`</query>
+<query>ALTER TABLE `order` ADD COLUMN `couponid` INT(10) NULL DEFAULT NULL  AFTER `couponfreedelivery`</query>
+<query>ALTER TABLE `paymentmethod` ADD `maximumamount` DECIMAL(15,4) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `product` ADD `shippingcost` DECIMAL( 15, 4 ) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `view` ADD `watermark` VARCHAR( 255 ) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `view` ADD `confirmregistration` TINYINT( 1 ) NOT NULL DEFAULT 0</query>
+<query>ALTER TABLE `view` ADD COLUMN `enableregistration` TINYINT(1) NOT NULL DEFAULT 1  AFTER `confirmregistration`</query>
+<query>ALTER TABLE `client` ADD `activelink` VARCHAR( 255 ) NULL</query>
+<query>ALTER TABLE `viewtranslation` DROP COLUMN `conditions` , DROP COLUMN `privacy`</query>
+<query>ALTER TABLE `newstranslation` CHANGE COLUMN `topic` `topic` VARCHAR(128) NOT NULL</query>
+<query>DROP TABLE `similarproductview`</query>
+<query>DROP TABLE `crosssellview`</query>
+<query>DROP TABLE `upsellview`</query>
+<query>ALTER TABLE `productattributeset` ADD COLUMN `status` TINYINT(1) UNSIGNED NOT NULL DEFAULT 1  AFTER `weight`</query>
+<query>
+CREATE TABLE IF NOT EXISTS `integrationwhitelist` (
+  `idintegrationwhitelist` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `integrationid` int(11) unsigned NOT NULL,
+  `ipaddress` varchar(64) NOT NULL,
+  PRIMARY KEY (`idintegrationwhitelist`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+</query>
+</install>
+<install version="1.3.2">
+<query>ALTER TABLE `updatehistory` CHANGE COLUMN `channel` `channel` VARCHAR(255) NULL DEFAULT NULL</query>
+</install>
+<install version="1.3.3">
+<query>ALTER TABLE `orderproductnotes` CHANGE `content` `content` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL</query>
+</install>
+<install version="1.3.4">
+<query>ALTER TABLE `orderproduct` CHANGE `pricenetto` `pricenetto` DECIMAL(16,4) NOT NULL</query>
+<query>ALTER TABLE `product` CHANGE  `weight`  `weight` DECIMAL( 16, 3 ) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `productattributeset` CHANGE COLUMN `weight` `weight` DECIMAL(15,3) NULL DEFAULT '0.000'  ;</query>
+<query>ALTER TABLE `dispatchmethod` ADD `countryids` VARCHAR(255) NOT NULL</query>
+<query>ALTER TABLE `news` CHANGE COLUMN `adddate` `adddate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP</query>
+<query>ALTER TABLE `staticcontenttranslation` CHANGE COLUMN `topic` `topic` VARCHAR(255) NOT NULL, DROP INDEX `UNIQUE_staticcontenttranslation_topic_languageid_staticcontentid`</query>
+<query>ALTER TABLE `contentcategorytranslation` CHANGE COLUMN `name` `name` VARCHAR(255) NOT NULL</query>
+<query>
+CREATE TABLE `staticgroup` (
+  `idstaticgroup` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `addid` int(10) unsigned NOT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idstaticgroup`),
+  KEY `FK_staticgroup_addid` (`addid`),
+  CONSTRAINT `FK_staticgroup_addid` FOREIGN KEY (`addid`) REFERENCES `user` (`iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>
+CREATE TABLE `staticgrouptranslation` (
+  `idstaticgrouptranslation` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `staticgroupid` int(10) unsigned NOT NULL,
+  `languageid` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idstaticgrouptranslation`),
+  UNIQUE KEY `UNIQUE_staticgrouptranslation_name_languageid_staticgroupid` (`name`,`languageid`,`staticgroupid`),
+  KEY `FK_staticgrouptranslation_languageid` (`languageid`),
+  CONSTRAINT `FK_staticgrouptranslation_languageid` FOREIGN KEY (`languageid`) REFERENCES `language` (`idlanguage`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC
+</query>
+<query>
+CREATE TABLE `staticattribute` (
+  `idstaticattribute` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `staticgroupid` int(10) unsigned NOT NULL,
+  `addid` int(10) unsigned NOT NULL,
+  `adddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idstaticattribute`),
+  KEY `FK_staticattribute_addid` (`addid`),
+  CONSTRAINT `FK_staticattribute_addid` FOREIGN KEY (`addid`) REFERENCES `user` (`iduser`),
+  KEY `FK_staticattribute_staticgroupid` (`staticgroupid`),
+  CONSTRAINT `FK_staticattribute_staticgroupid` FOREIGN KEY (`staticgroupid`) REFERENCES `staticgroup` (`idstaticgroup`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>
+CREATE TABLE `staticattributetranslation` (
+  `idstaticattributetranslation` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `staticattributeid` int(10) unsigned NOT NULL,
+  `languageid` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idstaticattributetranslation`),
+  KEY `FK_staticattributetranslation_languageid` (`languageid`),
+  CONSTRAINT `FK_staticattributetranslation_languageid` FOREIGN KEY (`languageid`) REFERENCES `language` (`idlanguage`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC
+</query>
+<query>INSERT INTO controller SET name = 'staticattribute', version = 1, description = 'Cechy statyczne', enable = 1, addid = 1, mode = 1</query>
+<query>INSERT INTO `right` SET controllerid = (SELECT idcontroller FROM controller WHERE name = 'staticattribute'), groupid = 1, permission = 127, addid = 1</query>
+<query>
+CREATE TABLE `productstaticattribute` (
+  `idproductstaticattribute` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `productid` int(10) unsigned NOT NULL,
+  `staticgroupid` int(10) unsigned NOT NULL,
+  `staticattributeid` smallint(5) unsigned DEFAULT NULL,
+  PRIMARY KEY (`idproductstaticattribute`),
+  KEY `productid` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC
+</query>
+</install>
+<install version="1.3.5">
+<query>ALTER TABLE `staticattributetranslation` ADD `description` TEXT NOT NULL</query>
+<query>ALTER TABLE `staticattributetranslation` ADD `file` VARCHAR(255) NOT NULL</query>
+<query>ALTER TABLE `productnew` CHANGE  `enddate`  `enddate` DATETIME NULL DEFAULT NULL</query>
+<query>ALTER TABLE `news` ADD `featured` INT( 11 ) NOT NULL</query>
+<query>ALTER TABLE `dispatchmethod` ADD  `currencyid` INT( 11 ) NOT NULL DEFAULT  '28'</query>
+<query>ALTER TABLE `orderclientdata` ADD COLUMN `countryid` INT(10) NULL  AFTER `clientid`</query>
+<query>ALTER TABLE `orderclientdeliverydata` ADD COLUMN `countryid` INT(11) NULL  AFTER `adddate`</query>
+</install>
+<install version="1.3.7">
+<query>ALTER TABLE `dispatchmethodprice` CHANGE COLUMN `dispatchmethodcost` `dispatchmethodcost` DECIMAL(16,4) NOT NULL DEFAULT '0.00'</query>
+<query>ALTER TABLE `dispatchmethodweight` CHANGE COLUMN `cost` `cost` DECIMAL(16,4) NOT NULL</query>
+<query>DROP TABLE `paymentmethodorderstatus`</query>
+<query>ALTER TABLE `view` ADD COLUMN `confirmorder` TINYINT NULL DEFAULT 0  AFTER `enableregistration` , ADD COLUMN `confirmorderstatusid` INT NULL DEFAULT NULL  AFTER `confirmorder`</query>
+<query>ALTER TABLE `dispatchmethod` ADD COLUMN `hierarchy` INT NULL DEFAULT 0  AFTER `currencyid`</query>
+<query>ALTER TABLE `paymentmethod` ADD COLUMN `hierarchy` INT NULL DEFAULT 0  AFTER `maximumamount`</query>
+</install>
+<install version="1.3.8">
+<query>ALTER TABLE `dispatchmethod` ADD `migrationid` INT( 11 ) NOT NULL</query>
+<query>ALTER TABLE  `order` ADD  `migrationid` INT( 11 ) NOT NULL</query>
+<query>ALTER TABLE dispatchmethod DROP INDEX unique_dispatchmethod_name</query>
+<query>ALTER TABLE client ADD migrationid INT(11) NOT NULL</query>
+<query>DELETE FROM `country` WHERE idcountry = 310</query>
+<query>INSERT INTO `country` (`name`, `addid`) VALUES ('Łotwa', 1)</query>
+<query>UPDATE `view` SET gacode = '' WHERE gacode = 'UA-15727904-1' AND idview > 0</query>
+</install>
+<install version="1.4.0">
+<query>ALTER TABLE `view` ADD COLUMN `guestcheckout` INT(11) NULL DEFAULT 1  AFTER `confirmorderstatusid`</query>
+</install>
+<install version="1.4.1">
+<query>ALTER TABLE `view` ADD  `ordernotifyaddresses` TEXT NOT NULL</query>
+<query>ALTER TABLE `client` ADD  `autoassign` TINYINT( 1 ) NOT NULL DEFAULT  '1'</query>
+<query>ALTER TABLE `dispatchmethodweight` CHANGE COLUMN `from` `from` DECIMAL(16,4) NULL DEFAULT NULL, CHANGE COLUMN `to` `to` DECIMAL(16,4) NULL DEFAULT NULL</query>
+<query>ALTER TABLE `productattributeset` ADD COLUMN `photoid` INT UNSIGNED NULL DEFAULT NULL  AFTER `status`</query>
+<query>INSERT INTO event SET name = 'admin.product.renderForm', model = 'tierpricing', method = 'addFields', module = 'Gekosale_TierPricing'</query>
+<query>INSERT INTO event SET name = 'admin.product.populateForm', model = 'tierpricing', method = 'populateFields', module = 'Gekosale_TierPricing'</query>
+<query>INSERT INTO event SET name = 'admin.product.add', model = 'tierpricing', method = 'saveSettings', module = 'Gekosale_TierPricing'</query>
+<query>INSERT INTO event SET name = 'admin.product.edit', model = 'tierpricing', method = 'saveSettings', module = 'Gekosale_TierPricing'</query>
+<query>INSERT INTO event SET name = 'frontend.productbox.assign', model = 'tierpricing', method = 'productBoxAssign', module = 'Gekosale_TierPricing'</query>
+<query>
+CREATE TABLE `producttierprice` (
+  `idproducttierprice` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `clientgroupid` int(10) unsigned NOT NULL,
+  `productid` int(10) unsigned NOT NULL,
+  `qtymin` int(10) unsigned DEFAULT '0',
+  `qtymax` int(10) unsigned DEFAULT '0',
+  `tierprice` decimal(15,4) NOT NULL,
+  `viewid` int(11) NOT NULL,
+  PRIMARY KEY (`idproducttierprice`),
+  KEY `FK_producttierprice_productid` (`productid`),
+  KEY `FK_producttierprice_clientgroupid` (`clientgroupid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+</query>
+</install>
+</mysql>

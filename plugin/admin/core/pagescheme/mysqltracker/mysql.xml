@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>pagescheme</table>
+			<column type="int">idpagescheme</column>
+			<status>RELATED</status>
+			<controller>pagescheme</controller>
+			<where>
+				<condition>
+					<column type="int">idpagescheme</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pageschemecss</table>
+			<column type="int">pageschemeid</column>
+			<status>NOTICE</status>
+			<controller>pagescheme</controller>
+			<where>
+				<condition>
+					<column type="int">pageschemeid</column>
+					<bind>pagescheme</bind>
+					<value>idpagescheme</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pageschemecssvalue</table>
+			<column type="int">pageschemeid</column>
+			<status>NOTICE</status>
+			<controller>pagescheme</controller>
+			<where>
+				<condition>
+					<column type="int">pageschemeid</column>
+					<bind>pagescheme</bind>
+					<value>idpagescheme</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

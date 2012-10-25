@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>tags</table>
+			<column type="int">idtags</column>
+			<status>RELATED</status>
+			<controller>tags</controller>
+			<where>
+				<condition>
+					<column type="int">idtags</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producttags</table>
+			<column type="int">idproducttags</column>
+			<status>NOTICE</status>
+			<controller>tags</controller>
+			<where>
+				<condition>
+					<column type="int">tagsid</column>
+					<bind>tags</bind>
+					<value>idtags</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

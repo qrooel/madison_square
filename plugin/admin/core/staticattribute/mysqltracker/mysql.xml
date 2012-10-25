@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>staticgroup</table>
+			<column type="int">idstaticgroup</column>
+			<status>RELATED</status>
+			<controller>staticattribute</controller>
+			<where>
+				<condition>
+					<column type="int">idstaticgroup</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticgrouptranslation</table>
+			<column type="int">idstaticgrouptranslation</column>
+			<status>NOTICE</status>
+			<controller>staticattribute</controller>
+			<where>
+				<condition>
+					<column type="int">staticgroupid</column>
+					<bind>staticgroup</bind>
+					<value>idstaticgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productstaticattribute</table>
+			<column type="int">idproductstaticattribute</column>
+			<status>NOTICE</status>
+			<controller>staticattribute</controller>
+			<where>
+				<condition>
+					<column type="int">staticgroupid</column>
+					<bind>staticgroup</bind>
+					<value>idstaticgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticattribute</table>
+			<column type="int">idstaticattribute</column>
+			<status>NOTICE</status>
+			<controller>staticattribute</controller>
+			<where>
+				<condition>
+					<column type="int">staticgroupid</column>
+					<bind>staticgroup</bind>
+					<value>idstaticgroup</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticattributetranslation</table>
+			<column type="int">idstaticattributetranslation</column>
+			<status>NOTICE</status>
+			<controller>staticattribute</controller>
+			<where>
+				<condition>
+					<column type="int">staticattributeid</column>
+					<bind>staticattribute</bind>
+					<value>idstaticattribute</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

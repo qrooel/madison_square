@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>paymentmethod</table>
+			<column type="int">idpaymentmethod</column>
+			<status>RELATED</status>
+			<controller>paymentmethod</controller>
+			<where>
+				<condition>
+					<column type="int">idpaymentmethod</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>order</table>
+			<column type="int">idorder</column>
+			<status>ERROR</status>
+			<errormsg>ERR_PAYMENTMETHOD_USED_IN_ORDERS</errormsg>
+			<controller>paymentmethod</controller>
+			<where>
+				<condition>
+					<column type="int">paymentmethodid</column>
+					<bind>paymentmethod</bind>
+					<value>idpaymentmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodpaymentmethod</table>
+			<column type="int">paymentmethodid</column>
+			<status>NOTICE</status>
+			<controller>paymentmethod</controller>
+			<where>
+				<condition>
+					<column type="int">paymentmethodid</column>
+					<bind>paymentmethod</bind>
+					<value>idpaymentmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>paymentmethodview</table>
+			<column type="int">paymentmethodid</column>
+			<status>NOTICE</status>
+			<controller>paymentmethod</controller>
+			<where>
+				<condition>
+					<column type="int">paymentmethodid</column>
+					<bind>paymentmethod</bind>
+					<value>idpaymentmethod</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

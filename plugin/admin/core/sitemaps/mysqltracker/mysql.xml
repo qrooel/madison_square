@@ -1,0 +1,15 @@
+<mysql>
+ <queries>
+  <query>
+   <table>sitemaps</table>
+   <column type="int">idsitemaps</column>
+   <status>RELATED</status>
+   <controller>sitemaps</controller>
+   <where>
+    <condition>
+     <column type="int">idsitemaps</column>
+    </condition>
+   </where>
+  </query>
+ </queries>
+</mysql>

@@ -1,0 +1,379 @@
+<mysql>
+ <queries>
+		<query>
+		   <table>view</table>
+		   <column type="int">idview</column>
+		   <status>RELATED</status>
+		   <controller>view</controller>
+		   <where>
+		    	<condition>
+		     	<column type="int">idview</column>
+		    	</condition>
+		   </where>
+		</query>
+		<query>
+			<table>sessionhandler</table>
+			<column type="int">idsessionhandler</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>viewcategory</table>
+			<column type="int">idviewcategory</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contentcategoryview</table>
+			<column type="int">idcontentcategoryview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>currencyview</table>
+			<column type="int">idcurrencyview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>transmail</table>
+			<column type="int">idtransmail</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>assigntogroup</table>
+			<column type="int">idassigntogroup</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clientnewsletter</table>
+			<column type="int">idclientnewsletter</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodview</table>
+			<column type="int">iddispatchmethodview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>paymentmethodview</table>
+			<column type="int">idpaymentmethodview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>contactview</table>
+			<column type="int">idcontactview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>clienthistorylog</table>
+			<column type="int">idclienthistorylog</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>mostsearch</table>
+			<column type="int">idmostsearch</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pollview</table>
+			<column type="int">idpollview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>producerview</table>
+			<column type="int">idproducerview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>staticcontentview</table>
+			<column type="int">idstaticcontentview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>userhistorylog</table>
+			<column type="int">iduserhistorylog</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>order</table>
+			<column type="int">idorder</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderproduct</table>
+			<column type="int">idorderproduct</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">orderid</column>
+					<bind>order</bind>
+					<value>idorder</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderclientdata</table>
+			<column type="int">idorderclientdata</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">orderid</column>
+					<bind>order</bind>
+					<value>idorder</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>orderclientdeliverydata</table>
+			<column type="int">idorderclientdeliverydata</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">orderid</column>
+					<bind>order</bind>
+					<value>idorder</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>viewtranslation</table>
+			<column type="int">idviewtranslation</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>rulescartview</table>
+			<column type="int">idrulescartview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>newsview</table>
+			<column type="int">idnewsview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>languageview</table>
+			<column type="int">idlanguageview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pagescheme</table>
+			<column type="int">idpagescheme</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>pageschemecssvalue</table>
+			<column type="int">idpageschemecssvalue</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">pageschemeid</column>
+					<bind>pagescheme</bind>
+					<value>idpagescheme</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>viewurl</table>
+			<column type="int">idviewurl</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>usergroupview</table>
+			<column type="int">idusergroupview</column>
+			<status>NOTICE</status>
+			<controller>view</controller>
+			<where>
+				<condition>
+					<column type="int">viewid</column>
+					<bind>view</bind>
+					<value>idview</value>
+				</condition>
+			</where>
+		</query>
+ </queries>
+</mysql>

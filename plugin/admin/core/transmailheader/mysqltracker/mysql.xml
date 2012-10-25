@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>transmailheader</table>
+			<column type="int">idtransmailheader</column>
+			<status>RELATED</status>
+			<controller>transmailheader</controller>
+			<where>
+				<condition>
+					<column type="int">idtransmailheader</column>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>

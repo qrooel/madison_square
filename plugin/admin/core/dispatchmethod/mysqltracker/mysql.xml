@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>dispatchmethod</table>
+			<column type="int">iddispatchmethod</column>
+			<status>RELATED</status>
+			<controller>dispatchmethod</controller>
+			<where>
+				<condition>
+					<column type="int">iddispatchmethod</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>order</table>
+			<column type="int">idorder</column>
+			<status>ERROR</status>
+			<errormsg>ERR_DISPATCHMETHOD_USED_IN_ORDERS</errormsg>
+			<controller>dispatchmethod</controller>
+			<where>
+				<condition>
+					<column type="int">dispatchmethodid</column>
+					<bind>dispatchmethod</bind>
+					<value>iddispatchmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodpaymentmethod</table>
+			<column type="int">paymentmethodid</column>
+			<status>NOTICE</status>
+			<controller>paymentmethod</controller>
+			<where>
+				<condition>
+					<column type="int">dispatchmethodid</column>
+					<bind>dispatchmethod</bind>
+					<value>iddispatchmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodprice</table>
+			<column type="int">iddispatchmethodprice</column>
+			<status>NOTICE</status>
+			<controller>dispatchmethod</controller>
+			<where>
+				<condition>
+					<column type="int">dispatchmethodid</column>
+					<bind>dispatchmethod</bind>
+					<value>iddispatchmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodweight</table>
+			<column type="int">iddispatchmethodweight</column>
+			<status>NOTICE</status>
+			<controller>dispatchmethod</controller>
+			<where>
+				<condition>
+					<column type="int">dispatchmethodid</column>
+					<bind>dispatchmethod</bind>
+					<value>iddispatchmethod</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>dispatchmethodview</table>
+			<column type="int">dispatchmethodid</column>
+			<status>NOTICE</status>
+			<controller>dispatchmethod</controller>
+			<where>
+				<condition>
+					<column type="int">dispatchmethodid</column>
+					<bind>dispatchmethod</bind>
+					<value>iddispatchmethod</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>
+	

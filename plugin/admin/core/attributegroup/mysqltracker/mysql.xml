@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+	<queries>
+		<query>
+			<table>attributegroupname</table>
+			<column type="int">idattributegroupname</column>
+			<status>RELATED</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">idattributegroupname</column>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>attributegroup</table>
+			<column type="int">idattributegroup</column>
+			<status>NOTICE</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">attributegroupnameid</column>
+					<bind>attributegroupname</bind>
+					<value>idattributegroupname</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>categoryattributeproduct</table>
+			<column type="int">attributegroupnameid</column>
+			<status>NOTICE</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">attributegroupnameid</column>
+					<bind>attributegroupname</bind>
+					<value>idattributegroupname</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productattributeset</table>
+			<column type="int">idproductattributeset</column>
+			<status>NOTICE</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">attributegroupnameid</column>
+					<bind>attributegroupname</bind>
+					<value>idattributegroupname</value>
+				</condition>
+			</where>
+		</query>
+		<query>
+			<table>productattributevalueset</table>
+			<column type="int">idproductattributevalueset</column>
+			<status>NOTICE</status>
+			<controller>attributegroupname</controller>
+			<where>
+				<condition>
+					<column type="int">productattributesetid</column>
+					<bind>productattributeset</bind>
+					<value>idproductattributeset</value>
+				</condition>
+			</where>
+		</query>
+	</queries>
+</mysql>
