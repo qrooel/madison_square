@@ -96,6 +96,8 @@
 			<div>
 				<ul>
 					<li {if $CURRENT_CONTROLLER == 'mainside'}class="active"{/if}><a href="{$URL}">{trans}TXT_MAINSIDE{/trans}</a></li>
+					<li {if $CURRENT_CONTROLLER == 'productnews'}class="active"{/if}><a href="{$URL}{seo controller=productnews}/">{trans}TXT_NEW_PRODUCTS{/trans}</a></li>
+					<li {if $CURRENT_CONTROLLER == 'productpromotion'}class="active"{/if}><a href="{$URL}{seo controller=productpromotion}/">{trans}TXT_PROMOTIONS{/trans}</a></li>
 					{if isset($contentcategory)}
 					{section name=cat loop=$contentcategory}
 					{if $contentcategory[cat].header == 1}

@@ -1,0 +1,13 @@
+>>> User Info: 
+SystemId: 1
+Name: Jan Kowalski
+E-mail: admin@admin.pl <<<
+Date: 2012-10-26 13:04:48
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: wwwController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END

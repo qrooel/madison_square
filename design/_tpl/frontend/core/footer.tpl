@@ -47,14 +47,6 @@
 									<li><span class="{seo_js controller=newsletter}">{trans}TXT_NEWSLETTER{/trans}</span></li>
 								</ul>
 							</li>
-							<li class="top">
-								<h4><span>{trans}TXT_RECOMMEND_SHOP{/trans}</span></h4>
-								<ul>
-									<li class="blip"><a href="http://blip.pl/dashboard?body={$URL}&amp;title={$SHOP_NAME}" target="_blank">Blip</a></li>
-									<li class="facebook"><a href="http://www.facebook.com/share.php?u={$URL}&amp;title={$SHOP_NAME}" target="_blank">Facebook</a></li>
-									<li class="wykop"><a href="http://www.wykop.pl/dodaj?url={$URL}&amp;title={$SHOP_NAME}" target="_blank">Wykop</a></li>
-								</ul>
-							</li>
 						</ul>
 				</div>
 			<!-- end: Footer -->
