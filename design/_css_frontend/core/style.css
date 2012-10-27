@@ -1,2 +1,22 @@
 #header h1, #header h1 a { margin-left: 170px; }
 a.logo {margin-left: 340px; }
+
+.add-to-cart a {background-color: #08689c; border-bottom: 1px #002e47 solid; }
+#add-cart {background-color: #08689c!important; background-image: none!important; }
+.toCart #add-cart {width: 78px!important; }
+
+
+.price {color: #08689c!important; }
+.promotion-time-left {color: #08689c!important; }
+
+#print a {color: #08689c!important; }
+
+
+/* TABS */
+#productTabs .ui-state-active a {color: #08689c!important; } 
+.ui-state-active a {color: #08689c!important; }
+
+
+/* CATEGORIES */
+
+

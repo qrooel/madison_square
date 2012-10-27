@@ -60,5 +60,16 @@ $(document).ready(function() {
 		$(spt).after('<a href="mailto:'+addr+'">'+ addr +'</a>');
 		$(spt).remove();
 	});
+	
+	// $('.layout-box-type-categorymenu .layout-box-content ul li').click(function(event) {
+	   // event.preventDefault();
+// 	   
+	   // console.log($(this).find('.submenu'));
+	// });
+	
 });
+
+
+
+
 
