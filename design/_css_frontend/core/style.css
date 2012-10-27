@@ -17,6 +17,13 @@ a.logo {margin-left: 340px; }
 .ui-state-active a {color: #08689c!important; }
 
 
-/* CATEGORIES */
+/* CATEGORIES MENU */
+.layout-box-type-categorymenu .layout-box-content > ul > li > .submenu {
+    width: 172px!important; 
+    margin-left: 8px!important; 
+    z-index: 999!important;
+    display: none;
+    position: relative!important;
+}
 
-
+.submenu-x {display: none; }

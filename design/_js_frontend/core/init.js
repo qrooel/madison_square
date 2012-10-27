@@ -61,11 +61,15 @@ $(document).ready(function() {
 		$(spt).remove();
 	});
 	
-	// $('.layout-box-type-categorymenu .layout-box-content ul li').click(function(event) {
-	   // event.preventDefault();
-// 	   
-	   // console.log($(this).find('.submenu'));
-	// });
+	$('.layout-box-type-categorymenu .layout-box-content ul .top-level').click(function(event) {
+	   event.preventDefault();
+	   
+	   $(this).parent().find('.submenu-x').animate({
+	       height: 'toggle'
+	   })
+	});
+	
+	$('.layout-box-type-categorymenu .layout-box-content ul li.active').find('.submenu-x').show();
 	
 });
 
