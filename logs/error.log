@@ -166,3 +166,39 @@ Trace:
 #1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
 #2 {main}
 ----------------------------------------END
+Date: 2012-10-28 13:38:45
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-10-29 20:41:08
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-10-29 22:15:25
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-10-30 19:46:36
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END

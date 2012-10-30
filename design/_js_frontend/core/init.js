@@ -64,9 +64,7 @@ $(document).ready(function() {
 	$('.layout-box-type-categorymenu .layout-box-content ul .top-level').click(function(event) {
 	   event.preventDefault();
 	   
-	   $(this).parent().find('.submenu-x').animate({
-	       height: 'toggle'
-	   })
+	   $(this).parent().find('.submenu-x').animate({height: 'toggle'});
 	});
 	
 	$('.layout-box-type-categorymenu .layout-box-content ul li.active').find('.submenu-x').show();
