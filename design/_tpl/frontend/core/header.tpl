@@ -115,7 +115,7 @@
 					{/if}
 					{/section}
 					{/if}
-					<li {if $CURRENT_CONTROLLER == 'contact'}class="active"{/if}><a href="{$URL}{seo controller=contact}/">{trans}TXT_CONTACT{/trans}</a></li>
+					{*<li {if $CURRENT_CONTROLLER == 'contact'}class="active"{/if}><a href="{$URL}{seo controller=contact}/">{trans}TXT_CONTACT{/trans}</a></li>*}
 				</ul>
 			</div>
 			<form id="product-search" action="{$URL}{seo controller=productsearch}" method="post">

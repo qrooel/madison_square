@@ -25,6 +25,7 @@
 			<span class="price">{trans}TXT_REQUEST_QUOTE{/trans}</span>
 		{/if}	
 	</h4>
+	
 	{if $enableopinions == 1}
 		{if $items[i].opinions > 0}
 		<p class="rating">

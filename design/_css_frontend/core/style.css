@@ -1,6 +1,13 @@
-#header h1, #header h1 a { margin-left: 170px; }
-a.logo {margin-left: 340px; }
+/* MY HACKS */
 
+/* HTML BACKGROUND OF 'BOTTOM OF SITE' HACK */
+html {background: #707070; }
+
+#header h1, #header h1 a { margin-left: 130px; }
+a.logo {margin-left: 260px; }
+
+#layout-box-44 .add-to-cart a {display: block; margin: 0 auto; } /* BESTSELLERS */
+#layout-box-50 .add-to-cart a {display: block; margin: 0 auto; } /* GRID LIST */
 .add-to-cart a {background-color: #08689c; border-bottom: 1px #002e47 solid; }
 #add-cart {background-color: #08689c!important; background-image: none!important; }
 .toCart #add-cart {width: 78px!important; }
@@ -18,7 +25,7 @@ a.logo {margin-left: 340px; }
 .ui-state-active a {color: #08689c!important; }
 
 
-/* CATEGORIES MENU */
+/* CATEGORIES MENU HACKS */
 .layout-box-type-categorymenu .layout-box-content > ul > li:hover > a {font-weight: normal!important; }
 .layout-box-type-categorymenu .layout-box-content > ul > li.active > a {font-weight: 700!important; }
 
@@ -37,4 +44,24 @@ a.logo {margin-left: 340px; }
 .submenu-x ul {list-style: circle; }
 
 
-#breadcrumbs strong {color: #004f73; }
+#breadcrumbs strong {color: #fff; }
+
+
+/* FOOTER */
+.copyright {border-top: solid 1px #5AA9D1; color: #fff; }
+
+/* PRODUCERS LIST */
+#layout-box-81 .field-select span.field {width: 135px; }
+
+/* HORIZONTAL MENU */
+#horizontal-navigation ul li > ul {display: none!important; } 
+
+
+
+
+
+
+
+
+
+

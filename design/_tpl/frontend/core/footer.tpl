@@ -1,4 +1,5 @@
 <!-- begin: Footer -->
+				{*
 				<div id="footer">
 						<ul>
 						{if isset($contentcategory)}
@@ -49,12 +50,13 @@
 							</li>
 						</ul>
 				</div>
+				*}
 			<!-- end: Footer -->
 			
 			<!-- begin: Copyright bar -->
 				<div id="copyright-bar">
 					<p class="copyright">
-						<a href="http://www.gekosale.pl/" title="Gekosale.pl - bezpłatne oprogramowanie sklepu internetowego" target="_blank"><img src="{$DESIGNPATH}_images_frontend/core/logos/logo-mini.png" alt="Gekosale" width="110" height="21" /></a>
+						madison-square.pl © 2012
 					</p>
 				</div>
 			<!-- end: Copyright bar -->

@@ -108,7 +108,7 @@ a:active {
 }
 
 #cart-preview {
-	background: #1c1c1c url('../../_images_frontend/upload/cart.png') 0 0 no-repeat;
+	background: transparent url('../../_images_frontend/upload/01_shopping_cart_blue.png') 0 0 no-repeat;
 }
 
 #cart-preview a {

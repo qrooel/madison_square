@@ -61,12 +61,16 @@ $(document).ready(function() {
 		$(spt).remove();
 	});
 	
+	// all sub-menus are hidden by css
+	// if menu has sub-menu, then animate that
 	$('.layout-box-type-categorymenu .layout-box-content ul .top-level').click(function(event) {
 	   event.preventDefault();
 	   
 	   $(this).parent().find('.submenu-x').animate({height: 'toggle'});
+	   
 	});
 	
+	// activate current menu, menu is showed while page is loaded
 	$('.layout-box-type-categorymenu .layout-box-content ul li.active').find('.submenu-x').show();
 	
 });
