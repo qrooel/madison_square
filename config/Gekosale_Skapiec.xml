@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+	<file>design/frontend/core/integration/index/skapiec.tpl</file>
+	<file>plugin/admin/core/integration/model/skapiec.php</file>
+	<file>plugin/frontend/core/integration/model/skapiec.php</file>
+	<file>sql/Gekosale_Skapiec/mysql_update/update.xml</file>
+</files>

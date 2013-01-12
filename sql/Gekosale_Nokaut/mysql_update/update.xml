@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+<install version="0.1.0">
+<query>
+INSERT INTO integration SET name = 'Nokaut.pl', symbol = 'nokaut', addid = 1, status = 1
+</query>
+</install>
+<uninstall version="0.1.0">
+<query>DELETE FROM integration WHERE symbol = 'nokaut'</query>
+</uninstall>
+</mysql>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+<install version="1.0.0">
+<query>
+CREATE TABLE `transferujsettings` (
+  `idtransferujsettings` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idsprzedawcy` int(10) unsigned DEFAULT NULL,
+  `viewid` int(10) unsigned DEFAULT NULL,
+  `kodsprzedawcy` varchar(255) NOT NULL,
+  `positiveorderstatusid` int(10) unsigned NOT NULL,
+  `negativeorderstatusid` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idtransferujsettings`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+</query>
+<query>
+INSERT INTO paymentmethod SET
+name = 'Transferuj.pl',
+addid = 1,
+controller = 'transferuj',
+online = 1
+</query>
+</install>
+<uninstall version="1.0.0">
+<query>DROP TABLE `transferujsettings`</query>
+<query>DELETE FROM `dispatchmethodpaymentmethod` WHERE paymentmethodid IN (SELECT idpaymentmethod FROM paymentmethod WHERE controller = 'transferuj')</query>
+<query>DELETE FROM `paymentmethodview` WHERE paymentmethodid IN (SELECT idpaymentmethod FROM paymentmethod WHERE controller = 'transferuj')</query>
+<query>DELETE FROM paymentmethod WHERE controller = 'transferuj'</query>
+</uninstall>
+</mysql>

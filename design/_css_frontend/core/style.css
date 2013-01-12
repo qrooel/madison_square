@@ -1,7 +1,8 @@
 /* MY HACKS */
 
 /* HTML BACKGROUND OF 'BOTTOM OF SITE' HACK */
-html {background: #707070; }
+body.body {background: #000; }
+
 
 #header h1, #header h1 a { margin-left: 130px; }
 a.logo {margin-left: 260px; }
@@ -15,6 +16,9 @@ a.logo {margin-left: 260px; }
 
 .price {color: #08689c!important; }
 .promotion-time-left {color: #08689c!important; }
+
+/* PROMO BOX */
+#layout-box-83 .product-list li {width: 184px; }
 
 #print a {color: #08689c!important; }
 
@@ -57,10 +61,26 @@ a.logo {margin-left: 260px; }
 #horizontal-navigation ul li > ul {display: none!important; } 
 
 
+/* SOCIAL ICONS AT THE BOTTOM OF BOXES */
+#layout-box-98 .layout-box-content {background: none; padding: 0; }
 
-
-
-
+/* Products LIST_LONG hover effect */
+#layout-box-50 .list-long > :hover, 
+#layout-box-62 .list-long > :hover {
+	background-image: linear-gradient(left , rgb(255,255,255) 47%, rgb(222,243,255) 100%);
+	background-image: -o-linear-gradient(left , rgb(255,255,255) 47%, rgb(222,243,255) 100%);
+	background-image: -moz-linear-gradient(left , rgb(255,255,255) 47%, rgb(222,243,255) 100%);
+	background-image: -webkit-linear-gradient(left , rgb(255,255,255) 47%, rgb(222,243,255) 100%);
+	background-image: -ms-linear-gradient(left , rgb(255,255,255) 47%, rgb(222,243,255) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(0.47, rgb(255,255,255)),
+		color-stop(1, rgb(222,243,255))
+	);
+}
 
 
 

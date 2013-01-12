@@ -25,8 +25,8 @@
 			'phpmailer'=> Array(
 				'Mailer'=> 'mail',
 				'CharSet'=> 'UTF-8',
-				'FromName'=> 'Madison Square',
-				'FromEmail'=> 'madison-square@madison.pl',
+				'FromName'=> 'Sklep madison-square.pl',
+				'FromEmail'=> 'sklep@madison-square.pl',
 				'server'=> '',
 				'port'=> 587,
 				'SMTPSecure'=> '',

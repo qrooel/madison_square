@@ -13,11 +13,7 @@ body {
 }
 
 body {
-	background: #707070;
-	background-image: -o-linear-gradient(top,#000000,#707070);
-	background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#707070));
-	background: -moz-linear-gradient(top,  #000000, #707070);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#707070');
+	background: #000000;
 }
 
 p {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+<install version="0.1.0">
+<query>
+CREATE TABLE `dotpaysettings` (
+  `iddotpaysettings` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idsprzedawcy` int(10) unsigned DEFAULT NULL,
+  `viewid` int(10) unsigned DEFAULT NULL,
+  `pin` varchar(16) NOT NULL,
+  `positiveorderstatusid` int(10) unsigned NOT NULL,
+  `negativeorderstatusid` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`iddotpaysettings`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>
+INSERT INTO paymentmethod SET
+name = 'dotpay.pl',
+addid = 1,
+controller = 'dotpay',
+online = 1
+</query>
+</install>
+<uninstall version="0.1.0">
+<query>DROP TABLE IF EXISTS `dotpaysettings`</query>
+<query>DELETE FROM dispatchmethodpaymentmethod WHERE paymentmethodid = (SELECT idpaymentmethod FROM paymentmethod WHERE controller = 'dotpay')</query>
+<query>DELETE FROM paymentmethodview WHERE paymentmethodid = (SELECT idpaymentmethod FROM paymentmethod WHERE controller = 'dotpay')</query>
+<query>DELETE FROM paymentmethod WHERE controller = 'dotpay'</query>
+</uninstall>
+</mysql>

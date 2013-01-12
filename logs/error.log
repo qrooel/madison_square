@@ -412,3 +412,209 @@ Trace:
 #1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
 #2 {main}
 ----------------------------------------END
+>>> User Info: 
+SystemId: 1
+Name: Jan Kowalski
+E-mail: admin@admin.pl <<<
+Date: 2012-11-17 13:09:09
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: indexController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-17 14:12:12
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-18 15:27:08
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-18 21:17:48
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-19 15:07:32
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: wwwController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-21 23:28:11
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+>>> User Info: 
+SystemId: 1
+Name: Jan Kowalski
+E-mail: admin@admin.pl <<<
+Date: 2012-11-21 23:37:52
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: wwwController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-22 20:58:04
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-11-29 23:06:31
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: wwwController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:36:50
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:36:50
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:36:56
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:36:56
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:37:05
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:37:05
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:38:38
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:38:38
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:38:58
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-14 08:38:58
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2012-12-27 20:58:10
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2013-01-05 11:20:02
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END
+Date: 2013-01-09 17:56:54
+File: /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/router.class.php in line: 157
+User error message: Nie odnaleziono kontrolera: faviconController
+Orginal error message: 
+Trace: 
+#0 /home/qrooel/public_html/ac.vipserv.org/madison_square/application/gekosale/app.class.php(280): Router->controllerLoader()
+#1 /home/qrooel/public_html/ac.vipserv.org/madison_square/index.php(146): App::Run()
+#2 {main}
+----------------------------------------END

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+	<file>design/frontend/core/paymentbox/accept/dotpay.tpl</file>
+	<file>design/frontend/core/paymentbox/confirm/dotpay.tpl</file>
+	<file>plugin/admin/core/paymentmethod/model/dotpay.php</file>
+	<file>plugin/frontend/core/payment/model/dotpay.php</file>
+	<file>plugin/frontend/core/dotpayreport/controller/dotpayreport.php</file>
+	<file>sql/Gekosale_Dotpay/mysql_update/update.xml</file>
+</files>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mysql>
+<install version="0.1.0">
+<query>
+INSERT INTO integration SET name = 'Ceneo.pl', symbol = 'ceneo', addid = 1, status = 1
+</query>
+<query>
+CREATE TABLE IF NOT EXISTS `categoryceneo` (
+  `idcategoryceneo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `categoryid` int(10) unsigned NOT NULL,
+  `ceneoid` int(10) unsigned NOT NULL,
+  `storeid` int(10) unsigned DEFAULT NULL,
+  `viewid` int(10) unsigned DEFAULT NULL,
+  `parentid` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`idcategoryceneo`),
+  KEY `FK_categoryceneo_categoryid` (`categoryid`),
+  KEY `FK_categoryceneo_storeid` (`storeid`),
+  KEY `FK_categoryceneo_viewid` (`viewid`),
+  KEY `FK_categoryceneo_parentid` (`parentid`),
+  CONSTRAINT `FK_categoryceneo_categoryid` FOREIGN KEY (`categoryid`) REFERENCES `category` (`idcategory`),
+  CONSTRAINT `FK_categoryceneo_parentid` FOREIGN KEY (`parentid`) REFERENCES `categoryceneo` (`idcategoryceneo`),
+  CONSTRAINT `FK_categoryceneo_storeid` FOREIGN KEY (`storeid`) REFERENCES `store` (`idstore`),
+  CONSTRAINT `FK_categoryceneo_viewid` FOREIGN KEY (`viewid`) REFERENCES `view` (`idview`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>
+CREATE TABLE IF NOT EXISTS `ceneo` (
+  `idceneo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `idorginal` int(10) unsigned NOT NULL,
+  `parentorginalid` int(10) unsigned DEFAULT NULL,
+  `storeid` int(10) unsigned DEFAULT NULL,
+  `viewid` int(10) unsigned DEFAULT NULL,
+  `parentid` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`idceneo`),
+  KEY `FK_ceneo_storeid` (`storeid`),
+  KEY `FK_ceneo_viewid` (`viewid`),
+  KEY `FK_ceneo_parentid` (`parentid`),
+  CONSTRAINT `FK_ceneo_parentid` FOREIGN KEY (`parentid`) REFERENCES `ceneo` (`idceneo`),
+  CONSTRAINT `FK_ceneo_storeid` FOREIGN KEY (`storeid`) REFERENCES `store` (`idstore`),
+  CONSTRAINT `FK_ceneo_viewid` FOREIGN KEY (`viewid`) REFERENCES `view` (`idview`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+</query>
+<query>
+INSERT INTO integration SET name = 'Ceneo.pl', symbol = 'ceneo', addid = 1, status = 1
+</query>
+</install>
+<install version="1.0.5">
+<query>
+ALTER TABLE `ceneo` ADD COLUMN `path` VARCHAR(255) NULL DEFAULT NULL
+</query>
+</install>
+<uninstall version="0.1.0">
+<query>DELETE FROM integration WHERE symbol = 'ceneo'</query>
+<query>DROP TABLE IF EXISTS categoryceneo</query>
+<query>DROP TABLE IF EXISTS ceneo</query>
+</uninstall>
+</mysql>
